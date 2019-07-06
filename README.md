@@ -1,2 +1,22 @@
-# wy
-网易严选
+# yx
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### 当前项目用到的技术
+```
+javascript
+```
+
