@@ -18,7 +18,7 @@
         <Limited/>
         <NewGuid/>
         <GuidModule/>
-        <CategoryModule/>
+        <CategoryModule v-for="(item,index) in axdata" :key="index" :mainTocaList="item"/>
         <FooterSelect/>
     </div>
 </template>
@@ -36,7 +36,7 @@ import GuidModule from './content/GuidModule.vue';
 import CategoryModule from './content/CategoryModule.vue';
 import FooterSelect from './content/footers.vue'
 
-
+import {categoryModule} from 'api/home/thome.js'
 export default {
     components:{
         Banner,
@@ -50,6 +50,15 @@ export default {
         GuidModule,
         CategoryModule,
         FooterSelect
+    },
+      async created() {
+        let dt = await categoryModule();
+        this.axdata = dt.data;
+    },
+    data(){
+       return{
+           axdata:[]
+       }  
     }
 }
 </script>

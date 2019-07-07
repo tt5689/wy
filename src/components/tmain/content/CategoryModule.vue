@@ -2,51 +2,29 @@
     <div class="categorywrap">
         <div>
             <a>
-                <img/>
+                <img :src="mainTocaList.titlePicUrl"/>
             </a>
         </div>
         <ul>
-            <li>
+            <li v-for="(item,index) in mainTocaList.itemList" :key="index">
                 <a>
-                    <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                    <p>shangpinmaishu<i>价格</i></p>
-                    <span>tagCnts</span>
+                    <img :src="item.showPicUrl"/>
+                    <p>{{item.name}}</p>
+                    <i>￥{{item.counterPrice}}</i><br/>
+                    <span v-if="item.promTag">{{item.promTag}}</span>
                 </a>
             </li>
-            <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
         </ul>
     </div>
 </template>
 
 <script>
+// import {categoryModule} from 'api/home/thome.js'
 export default {
+  props:['mainTocaList'],
+  mounted() {
+      console.log(this.mainTocaList);
+  },
 }
 </script>
 
@@ -77,6 +55,7 @@ export default {
             width: 2.16rem;
             margin-left: .2rem;
             margin-top:.2rem;
+            flex-shrink: 0;
             a{
                 display: block;
                 img{
@@ -88,10 +67,15 @@ export default {
                 p{
                    font-size: .23rem;
                    line-height: .4rem;
-                   i{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    white-space: normal;
+                }i{
                        color: #b4282d;
-                   } 
-                }
+                   }
                 span{
                     width: auto;
                     display: inline-block;

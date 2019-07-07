@@ -5,7 +5,6 @@
 export default {
     name:'mine',
     created() {
-        console.log(this.$route.params);
         this.id = this.$route.params.id;
         this.name = this.$route.params.name;
     },

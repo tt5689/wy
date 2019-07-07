@@ -1,38 +1,10 @@
 <template>
     <ul>
-        <li>
+        <li  v-for="(item,index) in receriveDataList" :key="index">
             <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-        <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-         <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
-            </a>
-        </li>
-         <li>
-            <a>
-                <img src="https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"/>
-                <p>shangpinmaishu<i>价格</i></p>
-                <span>tagCnts</span>
+                <img :src='item.showPicUrl'/>
+                <p>{{item.name}}<i>{{item.retailPrice}}</i></p>
+                <span v-for="(item1,index) in item.itemTagList" :key="index">{{item1.name}}</span>
             </a>
         </li>
     </ul>
@@ -40,7 +12,19 @@
 
 <script>
 export default {
-    
+    props:['popList','newList'],
+    created() {
+        if(this.popList){
+            this.receriveDataList = this.popList;
+        }else{
+            this.receriveDataList = this.newList;
+        }
+    },
+    data() {
+        return {
+            receriveDataList:[]
+        }
+    },
 }
 </script>
 

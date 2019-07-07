@@ -1,13 +1,12 @@
 <template>
     <div class="guidM_wwrap">
         <ul>
-            <li>
+            <li v-for="(item,index) in axData" :key="index">
                 <a>
-                    <p>2222222</p>
-                    <span>111111111</span>
+                    <p>{{item.title}}</p>
+                    <span>{{item.desc}}</span>
                     <div class="imgS">
-                        <img />
-                        <img/>
+                        <img v-for="(it,index1) in item.picUrlList" :key="index1" :src="it"/>
                     </div>
                 </a>
             </li>
@@ -15,8 +14,23 @@
     </div>
 </template>
 <script>
+import {sceneLightShoppingGuideModule} from 'api/home/thome.js'
 export default {
-    
+    async mounted() {
+        let dt =  await sceneLightShoppingGuideModule();
+        dt.data.forEach(element => {
+            var obj = {};
+            obj.title = element.styleItem.title;
+            obj.desc = element.styleItem.desc;
+            obj.picUrlList = element.styleItem.picUrlList;
+            this.axData.push(obj);
+        });
+    },
+    data() {
+        return {
+            axData:[]
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
@@ -35,6 +49,7 @@ export default {
             width: 3.44rem;
             height: 2.64rem;
             background: #f5f5f5;
+            margin-bottom: .04rem;
             a{
                 display: block;
                 padding: .24rem 0 0  .3rem;
@@ -53,7 +68,6 @@ export default {
                     img{
                         width: 48%;
                         height: 1.5rem;
-                        background: #333;
                     }
                 }
             }
