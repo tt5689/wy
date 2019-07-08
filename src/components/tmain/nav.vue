@@ -3,7 +3,7 @@
         <div class="thisisNav">
             <div class="h_nav">
                 <nav class="header_nav" v-if="flage">
-                    <li v-for="(item,index) in data" :key="index">{{item}}</li>
+                    <li v-for="(item,index) in list" :key="index">{{item}}</li>
                 </nav>
                 <div class="all_pind" v-if="!flage">全部频道</div>
             </div>
@@ -13,7 +13,7 @@
             </div>
             
             <ul class="all_nav" v-if="!flage">
-                <li v-for="(item,index) in data" 
+                <li v-for="(item,index) in list" 
                 :key="index"
                 @click="handlerClick(index)"
                 :class="activeIndex == index?'active':''"
@@ -26,13 +26,18 @@
 </template>
 <script>
 export default {
+    props:{
+        list:{
+            default:['shou','推挤','推挤','推挤','推挤','推挤','推挤','推挤']
+        }
+    },
     data() {
         return {
             flage:'true',
-            data:['shou','推挤','推挤','推挤','推挤','推挤','推挤','推挤'],
             activeIndex:0
         }
     },
+        
     methods: {
         handlerMouseClick(){
             this.flage = !this.flage;

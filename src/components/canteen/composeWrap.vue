@@ -1,40 +1,26 @@
 <template>
     <div id="t-floorWrap">
-        <div class="m-banner">
-            <p class="title">sweeee</p>
-            <p class="subtitle">dewfrefr</p>
+        <div class="m-banner" :style="'background:url('+vBList.moduleUrl+') no-repeat;background-size:cover;'">
+            <p class="title">{{vBList.title}}</p>
+            <p class="subtitle">{{vBList.desc}}</p>
         </div>
         <!-- 遍历数组 -->
         <div class="saleListGood">
-            <div class="goodGrid">
+            <div class="goodGrid" v-for="(item,index) in vBList.itemList" :key="index">
                 <a href="javascript:;">
                     <div class="left">
-                        <img/>
+                        <img :src="item.listPicUrl"/>
                     </div>
                     <div class="right">
                         <div class="tagWrap">
                             <!-- 要遍历 -->
-                            <span>德哈卡</span>
+                            <span v-for="(item1,index1) in item.itemTagList" :key="index1">
+                                    {{item1.name}}
+                            </span>
                         </div>
-                        <p>dhsdfidsfsjfbdj</p>
-                        <span class="selling">ewfregthyujukjiuk</span>
-                        <span class="price">sdef</span>
-                    </div>
-                </a>
-            </div>
-            <div class="goodGrid">
-                <a href="javascript:;">
-                    <div class="left">
-                        <img/>
-                    </div>
-                    <div class="right">
-                        <div class="tagWrap">
-                            <!-- 要遍历 -->
-                            <span>德哈卡</span>
-                        </div>
-                        <p>dhsdfidsfsjfbdj</p>
-                        <span class="selling">ewfregthyujukjiuk</span>
-                        <span class="price">sdef</span>
+                        <p>{{item.name}}</p>
+                        <span class="selling">{{item.simpleDesc}}</span>
+                        <span class="price">{{item.counterPrice}}</span>
                     </div>
                 </a>
             </div>
@@ -43,8 +29,12 @@
 </template>
 
 <script>
+import {getcanteen} from "api/canteen";
 export default {
-    
+    props:['vBList'],
+    mounted() {
+        console.log(this.vBList);
+    }
 }
 </script>
 
@@ -107,6 +97,7 @@ export default {
                         background: rgba(255,255,255,.9);
                         border: 1px solid #B4282D;
                         border-radius: .02667rem;
+                        margin-right: .02rem;
                     }
                 }
                 p{

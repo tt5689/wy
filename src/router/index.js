@@ -12,6 +12,7 @@ import zyyspecialoffer from './zyyspecialoffer'
 import zyynewproduct from './zyynewproduct'
 import zyygoodreputation from './zyygoodreputation'
 import zyysupervip from './zyysupervip'
+import canteen from './canteen'
 export default new Router({
   routes: [
     {
@@ -28,5 +29,6 @@ export default new Router({
     zyynewproduct,
     zyygoodreputation,
     zyysupervip,
+    canteen
   ]
 })

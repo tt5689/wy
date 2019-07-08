@@ -4,21 +4,23 @@
         <div class="gift_c">
             <a href="#" class="gitBag">
                 <h4>新人专享礼</h4>
-                <img/>
+                <img src="https://yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png"/>
             </a>
             <div class="git_right">
                 <div class="canteen">
                     <a href="javascript:;" @click="handlerClick()"> 
                         <h4>福利社</h4>
                         <p>今日特价</p>
-                        <img/>
+                        <span class="price" v-cloak>{{fulis.activityPrice}}</span>
+                        <img :src="fulis.showPicUrl" v-cloak/>
                     </a>
                 </div>
                 <div class="group">
                     <a href="#">
                         <h4>新人拼团</h4>
                         <p>一元起拼</p>
-                        <img/>
+                        <span v-cloak class="price">{{pintu.activityPrice}}</span>
+                        <img v-cloak :src="pintu.showPicUrl"/>
                     </a>
                 </div>
             </div>
@@ -27,12 +29,40 @@
 </template>
 
 <script>
+import {newPImg} from 'api/home/thome.js';
 export default {
     methods: {
         handlerClick(){
-             this.$router.replace('/canteens');
+             this.$router.replace('/canteen');
         }
     },
+    async created() {
+        let data1 = await newPImg();
+        var i =0;
+         for(var item of data1.data){
+            var obj = {};
+            obj.activityPrice = item.activityPrice;
+            obj.showPicUrl = item.showPicUrl;
+            if(i==0){
+                 this.fulis = obj;
+                 i++;
+             }else{
+                 this.pintu = obj
+             }
+        }
+    },
+    data(){
+        return {
+            fulis:{
+                activityPrice:'',
+                showPicUrl:''
+            },
+            pintu:{
+                activityPrice:'',
+                showPicUrl:''
+            }
+        }
+    }
 }
 </script>
 
@@ -67,10 +97,24 @@ export default {
                 margin-top: .07rem;
                 margin-left: .48rem;
                 width: 2.44rem;
-                height: 1.88rem;
+                height: 2.88rem;
                 border: 0;
             }
+            
         }
+        .price{
+                position: absolute;
+                top:0px;
+                right: .1rem;
+                display: block;
+                width:.8rem;
+                height: .8rem;
+                line-height: .8rem;
+                background: #F59524;
+                border-radius: 50%;
+                color: #fff;
+                text-align: center;
+            }
         .git_right{
             width: 3.42rem;
             display: flex;

@@ -1,26 +1,16 @@
 <template>
     <div id="lowerPrice">
-        <div class="priceTop">
-            <p>dfdsfefe</p>
-            <span>dewfregtrhytjuyj</span>
+        <div class="priceTop" :style="'background:url('+aPList.moduleUrl+') no-repeat;background-size:cover;'">
+            <p>{{aPList.title}}</p>
+            <span>{{aPList.desc}}</span>
         </div>
         <div class="tgoodsList">
-            <a>
-                <img />
-                <p class="gname">dfsfsfresrf</P>
-                <div class="tpri"><span>dddddd</span><i>defregr</i></div>
+            <a v-for="(item,index) in aPList.itemList" :key="index">
+                <img :src="item.listPicUrl"/>
+                <p class="gname">{{item.name}}</P>
+                <div class="tpri"><span>{{item.retailPrice}}</span><i>{{item.counterPrice}}</i></div>
                 <div class="tag">
-                    <p>dewde</p>
-                    <p>dewde</p>
-                </div>
-            </a>
-             <a>
-                <img />
-                <p class="gname">dfsfsfresrf</P>
-                <div class="tpri"><span>dddddd</span><i>defregr</i></div>
-                <div class="tag">
-                    <p>dewde</p>
-                    <p>dewde</p>
+                    <p v-for="(item1,index1) in item.itemTagList" :key="index1">{{item1.name}}</p>
                 </div>
             </a>
         </div>
@@ -28,8 +18,9 @@
     </div>
 </template>
 <script>
+import {getcanteen} from "api/canteen";
 export default {
-    
+    props:['aPList']
 }
 </script>
 <style lang="scss" scoped>
@@ -38,7 +29,6 @@ export default {
         background: #fff;
         .priceTop{
             height: 2.6rem;
-            background: pink;
             text-align: center;
             p{
                 padding-top: .88rem;
@@ -72,6 +62,10 @@ export default {
                     line-height: .52rem;
                     font-size: .28rem;
                     font-weight: 900;
+                    width: 100%;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
                 .tpri{
                     line-height: .42rem;
@@ -94,11 +88,12 @@ export default {
             display: flex;
             flex-direction: row;
             p{
-                padding: .08rem;
-                line-height: .26rem;
+                padding: 0.08rem;
+                line-height: 0.18rem;
+                font-size: .12rem;
                 border: 1px solid #b42b2d;
-                border-radius: .04rem;
-                margin-right: .08rem;
+                border-radius: 0.04rem;
+                margin-right: 0.08rem;
             }
         }
     }

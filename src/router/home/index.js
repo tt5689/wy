@@ -5,4 +5,12 @@ export default{
     meta:{
         zyydisplaynoneboyyom:true,
     }
+    // children:[
+    //     {
+    //         path:"/canteen",
+    //         component:()=>import('components/canteen/canteen.vue'),
+    //         name:'canteen'
+    //     }
+        
+    // ]
 }

@@ -3,30 +3,51 @@
         <CommHead :val="title"/>
         <div class="recom_top">
             <a href="javascript:;">
-                <img/>
+                <img :src="topI.showPicUrl"/>
                 <div class="good_tip">
-                    <p>特惠</p>
-                    <h3>单行审理</h3>
-                    <span>cdscsdcds</span><br/>
-                    <strong>价格</strong>
+                    <p v-for="(limi,index1) in topI.itemTagList" :key="index1">{{limi.name}}</p>
+                    <h3>{{topI.name}}</h3>
+                    <span>{{topI.simpleDesc}}</span><br/>
+                    <strong>{{topI.retailPrice}}</strong>
                 </div>
             </a>
         </div>
-        <TGoodList/>
+        <TGoodList :popList="data"/>
     </div>
 </template>
 
 <script>
 import CommHead from './commHead.vue'
 import TGoodList from './tgoodList.vue'
+import {popularItemList} from 'api/home/thome.js'
 export default {
      components:{
         CommHead,
         TGoodList
     },
+    async mounted() {
+      let d =  await popularItemList();
+      var i =1;
+      d.data.forEach(element => {
+         var obj = {};
+        obj.itemTagList= element.itemTagList;
+        obj.name = element.name;
+        obj.simpleDesc = element.simpleDesc;
+        obj.retailPrice= '￥'+element.retailPrice;
+        obj.showPicUrl = element.showPicUrl;
+        if(i==1){
+            this.topI = obj;
+            i++;
+        }else{
+            this.data.push(obj);
+        }
+      });
+    },
     data() {
         return {
-            title:'人气推荐'
+            title:'人气推荐',
+            data:[],
+            topI:{}
         }
     },
 }
@@ -56,7 +77,10 @@ export default {
                 padding: .6rem 0 0 .3rem;
                 box-sizing: border-box;
                 p{
-                    width: 1.02rem;
+                    // width: 1.02rem;
+                    padding: 0 .1rem;
+                    display: inline-block;
+                    margin-left: .04rem;
                     height: .3rem;
                     color: #b4282d;
                     font-size: .18rem;
