@@ -19,12 +19,8 @@
 </template>
 
 <script>
-// import {categoryModule} from 'api/home/thome.js'
 export default {
   props:['mainTocaList'],
-  mounted() {
-      console.log(this.mainTocaList);
-  },
 }
 </script>
 

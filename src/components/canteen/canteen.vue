@@ -2,16 +2,17 @@
     <div class="centeen_wrap">
         <CenTHeader/>
         <div class="canmain">
-            <CanBann/>
-            <Welfare/>
+            <CanBann />
+            <Welfare />
             <CanNav/>
             <TicketCenter/>
             <!-- 这里要用利用父传子 -->
-            <Lowerprice/>
-            <ComposeWrap/>
+            <Lowerprice v-for="(item,index) in abPriceList" :key="index" :aPList="item"/>
+            <ComposeWrap v-for="(item,index) in valueList" :key="index" :vBList="item"/>
             <Amazing/>
         </div>
     </div>
+    
 </template>
 <script>
 import CenTHeader from './canheader.vue';
@@ -21,7 +22,9 @@ import CanNav from './canNav.vue';
 import TicketCenter from './ticketCenter.vue';
 import Lowerprice from './aboutlowerp.vue';
 import ComposeWrap from './composeWrap.vue';
-import Amazing from './amazing.vue'
+import Amazing from './amazing.vue';
+
+import {getcanteen} from "api/canteen";
 export default {
     components:{
         CenTHeader,
@@ -32,6 +35,21 @@ export default {
         Lowerprice,
         ComposeWrap,
         Amazing
+    },
+    async created(){
+        let data = await getcanteen();
+        data = data.data;
+        if(data.saleModuleTypeVO){
+            this.abPriceList  = data.saleModuleTypeVO[1].saleModuleVO;
+            this.valueList  = data.saleModuleTypeVO[2].saleModuleVO;
+        }
+        
+    },
+    data(){
+        return{
+            abPriceList:[],
+            valueList:[]
+        }
     }
 }
 </script>

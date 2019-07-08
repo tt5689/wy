@@ -2,28 +2,15 @@
     <div id="ticketCent">
         <h2>领券中心</h2>
         <div class="tickcontent">
-            <a>
-                <img/>
+            <a v-for="(item,index) in tickerCe" :key="index">
+                <img :src="item.imageUrl[0]"/>
                 <div class="text_Cent">
-                    <p>sdhjskfdsj</p>
-                    <span>sdsjsds</span><br/>
+                    <p>{{item.name}}</p>
+                    <span>{{item.rangeName}}</span><br/>
                     <b>有效时间：20190704-20190104</b><br/>
                     <div>
-                        <span class="prosent">20%</span>
-                        <button>立即抢购</button>
-                    </div>
-
-                </div>
-            </a>
-            <a>
-                <img/>
-                <div class="text_Cent">
-                    <p>sdhjskfdsj</p>
-                    <span>sdsjsds</span><br/>
-                    <b>有效时间：20190704-20190104</b><br/>
-                    <div>
-                        <span class="prosent">20%</span>
-                        <button>立即抢购</button>
+                        <span class="prosent">{{item.percent}}%</span>
+                        <button>立即领取</button>
                     </div>
 
                 </div>
@@ -32,8 +19,18 @@
     </div>
 </template>
 <script>
+import {getcanteen} from "api/canteen";
 export default {
-    
+   async created(){
+        let data = await getcanteen();
+        data = data.data;
+        this.tickerCe = data.saleModuleTypeVO[0].saleModuleVO[0].choicenessCouponList;
+    },  
+    data(){
+        return {
+            tickerCe:[]
+        }
+    }
 }
 </script>
 
@@ -70,9 +67,14 @@ export default {
                         font-weight: 900;
                     }
                     span{
-                        line-height: .56rem;
-                        font-size: .28rem;
+                        display: block;
+                        line-height: 0.56rem;
+                        font-size: 0.28rem;
                         color: #333;
+                        width: 3.6rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
                     }
                     b{
                         color: #7f7f7f;

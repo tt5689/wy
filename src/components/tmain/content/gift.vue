@@ -33,7 +33,7 @@ import {newPImg} from 'api/home/thome.js';
 export default {
     methods: {
         handlerClick(){
-             this.$router.replace('/canteens');
+             this.$router.replace('/canteen');
         }
     },
     async created() {
