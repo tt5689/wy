@@ -3,10 +3,10 @@
       <CommHead :val="title"/>
       <ul>
           <li v-for="(item,index) in axoisData" :key="index">
-              <a>
+                <router-link to="/timeB" tag='a'>
                   <img :src="item.showPicUrl"/>
                   <p>￥{{item.activityPrice}}<i>￥{{item.originPrice}}</i></p>
-              </a>
+              </router-link>
           </li>
       </ul>
   </div>

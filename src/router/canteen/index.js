@@ -3,6 +3,6 @@ export default{
     component:()=>import('components/canteen/canteen.vue'),
     name:'canteen',
     meta:{
-        zyydisplaynoneboyyom:true,
+        zyydisplaynoneboyyom:false,
     }
 }

@@ -14,6 +14,7 @@ import zyygoodreputation from './zyygoodreputation'
 import zyysupervip from './zyysupervip'
 import canteen from './canteen'
 import newPerson from './newPerson'
+import timeBy from './timeby'
 export default new Router({
   routes: [
     {
@@ -25,6 +26,7 @@ export default new Router({
     mine,
     shopcar,
     recognize,
+    timeBy,
     zyyhotsales,
     zyyspecialoffer,
     zyynewproduct,
