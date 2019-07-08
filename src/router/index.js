@@ -7,20 +7,30 @@ import home from './home'
 import mine from './mine'
 import shopcar from './shopCar'
 import recognize from './recognize'
+import zyyhotsales from './zyyhotsales'
+import zyyspecialoffer from './zyyspecialoffer'
+import zyynewproduct from './zyynewproduct'
+import zyygoodreputation from './zyygoodreputation'
+import zyysupervip from './zyysupervip'
 import canteen from './canteen'
-import newPerson from './newPerson'
+// import newPerson from './newPerson'
 export default new Router({
   routes: [
     {
       path:"/",
-      redirect:"/home"
+      redirect:"/home",
     },
     classfiy,
     home,
     mine,
     shopcar,
     recognize,
+    zyyhotsales,
+    zyyspecialoffer,
+    zyynewproduct,
+    zyygoodreputation,
+    zyysupervip,
     canteen,
-    newPerson
+    // newPerson
   ]
 })

@@ -4,10 +4,6 @@
 <script>
 export default {
     name:'mine',
-    created() {
-        this.id = this.$route.params.id;
-        this.name = this.$route.params.name;
-    },
     data() {
         return {
             id:'',

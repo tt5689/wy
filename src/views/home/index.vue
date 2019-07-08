@@ -15,11 +15,15 @@ import Nav from "components/tmain/nav.vue";
 import MainContent from "components/tmain/main_content.vue";
 import {mapState} from "vuex";
 export default {
-  name: "home",
-   computed: {
-        ...mapState({
-            homeNav:state=>state.home.homeNav
-        })
+    name:'home',
+    components:{
+        Header,
+        Nav,
+        MainContent
+        
+    },
+    created() {
+       console.log(this.$route.meta.flag);
     },
   components: {
     Header,
