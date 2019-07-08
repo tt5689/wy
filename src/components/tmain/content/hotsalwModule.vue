@@ -2,12 +2,12 @@
     <div class="t-hotsale">
         <h2>类目热销榜</h2>
         <ul>
-            <li v-for="(item,index) in classList" :key="index">
+            <router-link v-for="(item,index) in classList" :key="index" :to="'/zyyhotsales'" tag="li" >
                 <a href="#">
                     <p>{{item.categoryName}}</p>
                     <img :src="item.picUrl"/>
                 </a>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -23,7 +23,7 @@ export default {
         return {
             classList:[]
         }
-    }
+    },
 }
 </script>
 
