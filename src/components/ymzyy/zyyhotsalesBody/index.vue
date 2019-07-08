@@ -46,7 +46,7 @@
                     :src="item.listPicUrl"
                     />
                     <div class="topRight">
-                    <div class="topRightOne">{{item.simpleDesc}}</div>
+                    <div class="topRightOne" v-show="item.couponAvaliable"></div>
                     <div class="topRightTwo">{{item.name}}</div>
                     <div class="topRightThree">{{item.goodCmtRate}}好评率</div>
                     <div class="topRightPrice">
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="listBottom">
-                    <span>{{item.hotSaleListBottomInfo.content}}</span>
+                    <span>{{item.simpleDesc}}</span>
                 </div>
             </li>
         </ul>
