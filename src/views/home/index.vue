@@ -23,7 +23,7 @@ export default {
         
     },
     created() {
-       console.log(this.$route.meta.flag); 
+       console.log(this.$route.meta.flag);
     },
 }
 </script>
