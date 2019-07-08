@@ -5,7 +5,7 @@
           <li v-for="(item,index) in axoisData" :key="index">
               <a>
                   <img :src="item.showPicUrl"/>
-                  <p>{{item.activityPrice}}<i>{{item.originPrice}}</i></p>
+                  <p>￥{{item.activityPrice}}<i>￥{{item.originPrice}}</i></p>
               </a>
           </li>
       </ul>

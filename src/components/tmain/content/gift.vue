@@ -2,7 +2,7 @@
     <div class="git_wrap">
         <h1>- 新人专享礼 -</h1>
         <div class="gift_c">
-            <a href="#" class="gitBag">
+            <a href="#" class="gitBag"  @click="handlernewPClick()">
                 <h4>新人专享礼</h4>
                 <img src="https://yanxuan.nosdn.127.net/ba4d635ec94ad95b28bfab6500900659.png"/>
             </a>
@@ -34,6 +34,9 @@ export default {
     methods: {
         handlerClick(){
              this.$router.replace('/canteen');
+        },
+        handlernewPClick(){
+            this.$router.replace('/newPerson');
         }
     },
     async created() {

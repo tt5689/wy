@@ -8,6 +8,7 @@ import mine from './mine'
 import shopcar from './shopCar'
 import recognize from './recognize'
 import canteen from './canteen'
+import newPerson from './newPerson'
 export default new Router({
   routes: [
     {
@@ -19,6 +20,7 @@ export default new Router({
     mine,
     shopcar,
     recognize,
-    canteen
+    canteen,
+    newPerson
   ]
 })

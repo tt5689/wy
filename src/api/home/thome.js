@@ -1,6 +1,5 @@
-import http from "utils/http.js";
+
 import axios from 'axios';
-// const homeDat =  ()=>http("get","http://localhost:3000/goods")
 
 //获取新人专享数据
 export const newPImg = () =>{
