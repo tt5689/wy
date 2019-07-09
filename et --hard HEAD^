@@ -1,0 +1,152 @@
+[33mcommit ca6f05287035dda784f534643fec6edbd301c1db[m[33m ([m[1;36mHEAD -> [m[1;32mdcp[m[33m, [m[1;31morigin/dcp[m[33m)[m
+Merge: 3fd7083 2a4dc2e
+Author: e <1792544126@qq.com>
+Date:   Tue Jul 9 15:48:24 2019 +0800
+
+    分页
+
+[33mcommit 3fd70834d2fedc84b231c75b72f7742d939fc49a[m
+Merge: cff6f75 fa430be
+Author: e <1792544126@qq.com>
+Date:   Tue Jul 9 15:40:43 2019 +0800
+
+    完成分页
+
+[33mcommit 2a4dc2ef50e805b10acabfea39f81ff3e2da49b0[m[33m ([m[1;31morigin/zyy[m[33m, [m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Merge: fa430be c27e04e
+Author: ymzyy <413015120@qq.com>
+Date:   Tue Jul 9 15:39:30 2019 +0800
+
+    完成超级会员页面渲染
+
+[33mcommit c27e04e6abbffdc55f1666c5ba119be4b884e19a[m
+Author: ymzyy <413015120@qq.com>
+Date:   Tue Jul 9 15:16:10 2019 +0800
+
+    完成超级会员页面渲染
+
+[33mcommit fa430be9b8fc1519087624ac7a8ab01bcd30433c[m
+Author: e <1792544126@qq.com>
+Date:   Tue Jul 9 14:54:45 2019 +0800
+
+    完成分类
+
+[33mcommit e5baec915d1b2b64bf241ab94f0e2617e71b7460[m
+Merge: fcaf61b 27f5842
+Author: tt5689 <1529802869@qq.com>
+Date:   Tue Jul 9 09:44:14 2019 +0800
+
+    Merge branch 'ting' into dev
+
+[33mcommit 27f58422ac2c11352ac658cfcad77c7857df99eb[m[33m ([m[1;31morigin/ting[m[33m)[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Tue Jul 9 09:43:31 2019 +0800
+
+    福利社添加￥符
+
+[33mcommit fcaf61b361e4ec244d0aacb0c212b2ef1d20ca3e[m
+Merge: 2c38134 25c190a
+Author: tt5689 <1529802869@qq.com>
+Date:   Tue Jul 9 09:31:53 2019 +0800
+
+    首页数据丢失bug修复
+
+[33mcommit 25c190a98284f867b3ccb70de6b754d124815301[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Tue Jul 9 09:26:30 2019 +0800
+
+    首页数据丢失bug修复
+
+[33mcommit 2c38134f90b11db7305889e6cfe529f3cc6a4765[m
+Merge: 04fc02a a8239b2
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 22:04:45 2019 +0800
+
+    完成限时抢购
+
+[33mcommit a8239b22b4dc641f5def3cf3a0a21fd855133823[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 21:59:43 2019 +0800
+
+    限时抢购页面以及购物车框架搭建
+
+[33mcommit 04fc02a412a8e20e2267e1679bad6caac8288ff6[m
+Merge: 8cc281c 670d5fb
+Author: ymzyy <413015120@qq.com>
+Date:   Mon Jul 8 19:38:07 2019 +0800
+
+    添加主页面跳转至热搜榜
+
+[33mcommit 670d5fbc2bf47a07e9e038c393dfa5d2701f1e26[m
+Author: ymzyy <413015120@qq.com>
+Date:   Mon Jul 8 19:28:52 2019 +0800
+
+    添加首页页面跳转至热搜榜
+
+[33mcommit cff6f75180c1f5460b047b477d4dfd4421035953[m
+Author: e <1792544126@qq.com>
+Date:   Mon Jul 8 15:45:15 2019 +0800
+
+    分类完成子路嵌套
+
+[33mcommit 8cc281cb7deb05ff35eaa57fb4e4ddf3d7cfb1a0[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 15:43:35 2019 +0800
+
+    bushi1111
+
+[33mcommit 34f4b04440cbde294c37c888b3e5936f0d0e0aff[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 15:40:18 2019 +0800
+
+    bushi
+
+[33mcommit 39bb3b14d3a1e76e262e574c507c526c5c7ae298[m
+Merge: c9a6eec 0ea2029
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 15:38:44 2019 +0800
+
+    bushi
+
+[33mcommit c9a6eecbc95797c9427795c62bce0bcd780792d2[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 14:58:01 2019 +0800
+
+    完成新人专享页面数据渲染
+
+[33mcommit 0ea2029fa29e80ce48b62ad598c73285858fc54f[m
+Merge: 4d0b338 3c65893
+Author: ymzyy <413015120@qq.com>
+Date:   Mon Jul 8 09:59:53 2019 +0800
+
+    完成热销榜部分渲染，尝试隐藏首页公共底部导航
+
+[33mcommit 4d0b3380df71dce11e4808274cb3ec08eb82455f[m
+Author: ymzyy <413015120@qq.com>
+Date:   Mon Jul 8 08:55:32 2019 +0800
+
+    完成热销榜渲染，尝试隐藏首页公共底部导航
+
+[33mcommit 3c65893e1df11de97533f7733b6a8a80dc46e937[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Mon Jul 8 08:24:48 2019 +0800
+
+    完成福利社数据渲染
+
+[33mcommit 202e8233f36c1aab637f10509f3542a18cc5350d[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Sun Jul 7 18:02:23 2019 +0800
+
+    完成首页数据渲染
+
+[33mcommit da6e76f3916b3e46a28a93ea124e27ac2797b3fc[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: tt5689 <1529802869@qq.com>
+Date:   Sat Jul 6 08:55:33 2019 +0800
+
+    项目架构及home页
+
+[33mcommit a756a9bd857949e41e47e03ba0a5588b116622bc[m
+Author: tt5689 <51560925+tt5689@users.noreply.github.com>
+Date:   Sat Jul 6 08:48:06 2019 +0800
+
+    Initial commit
