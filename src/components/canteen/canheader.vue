@@ -1,6 +1,6 @@
 <template>
         <div class="svheader">
-            <i class ="iconfont iconshouye" ></i>
+            <router-link to="/home" tag="i" class ="iconfont iconshouye" ></router-link>
             <h2 v-text="viptitle" class="zyywyxttitle"></h2>
             <i  class ="iconfont iconfangdajing"></i>
             <i  class ="iconfont iconcart" ></i>
