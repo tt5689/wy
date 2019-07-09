@@ -1,5 +1,4 @@
-
-    <template>
+<template>
    <div class="box">
     <div class="top">
         <div class="top-left">
@@ -21,16 +20,20 @@
         <router-link to="/recognize/sd" tag="li">晒单</router-link>
         <router-link to="/recognize/books" tag="li">开发者笔记</router-link>
     </ul>
-   <router-view></router-view>
+   
 </div>
 </template>
-    
-
-
 <script>
+import Recbody from "components/tj"
 export default {
+    name:"recognize",
+    components:{
+        Recbody,
+    }
+    
 }
 </script>
+
 <style scoped>
 .box{
     width: 100%;
@@ -99,4 +102,8 @@ ul li{
     margin: 0 .2rem;
     vertical-align: middle;
 }
+
+
+
 </style>
+
