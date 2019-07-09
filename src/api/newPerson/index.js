@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import http from "utils/http.js"
 //获取新人专享数据
 export const exclusiveList = () =>{
    return  axios({

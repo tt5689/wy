@@ -5,73 +5,19 @@
                 <div class="fa-line2">全站优惠 限时限量</div>
             </div>
             <div class="screen-tabs">
-                <ul class="t-inner">
-                    <li class="t-item">
-                        <p class="time">18:00</p>
-                        <p class="statusTxt">抢购中</p>
-                    </li>
-                    <li class="t-item">
-                        <p class="time">18:00</p>
-                        <p class="statusTxt">抢购中</p>
-                    </li>
-                    <li class="t-item">
-                        <p class="time">18:00</p>
-                        <p class="statusTxt">抢购中</p>
-                    </li>
-                    <li class="t-item">
-                        <p class="time">18:00</p>
-                        <p class="statusTxt">抢购中</p>
-                    </li>
-                </ul>
+                <TimeNav/>
             </div>
-            <div class="sc-list">
-                <div class="sc-item">
-                    <a href="javascript:;">
-                        <div class="sc-left">
-                            <img/>
-                        </div>
-                        <div class="sc-right">
-                            <div class="innerName">儿童护脊减负书包（1-3年级）</div>
-                            <div class="desc">科学护脊，贴纸玩趣DIY</div>
-                            <div class="price-saleD">
-                                <span class="actulPrice">56</span>
-                                <span class="retailPrice">56</span>
-                                <span class="discount">7.5折</span>
-                            </div>
-                            <div class="line">
-                                <div class="progressWrap">20%</div>
-                                <button class="buy_btn">马上抢</button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="sc-item">
-                        <a href="javascript:;">
-                            <div class="sc-left">
-                                <img/>
-                            </div>
-                            <div class="sc-right">
-                                <div class="innerName">儿童护脊减负书包（1-3年级）</div>
-                                <div class="desc">科学护脊，贴纸玩趣DIY</div>
-                                <div class="price-saleD">
-                                    <span class="actulPrice">56</span>
-                                    <span class="retailPrice">56</span>
-                                    <span class="discount">7.5折</span>
-                                </div>
-                                <div class="line">
-                                    <div class="progressWrap">20%</div>
-                                    <button class="buy_btn">马上抢</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-            </div>
+            <TimeBuy/>
         </div>
 </template>
 
 <script>
+import TimeNav from 'components/timeAbout/timeNav.vue';
+import TimeBuy from 'components/timeAbout/timeBuy.vue';
 export default {
-    
+    components:{
+    TimeNav,
+    TimeBuy}
 }
 </script>
 
@@ -81,6 +27,7 @@ export default {
     margin-bottom: .2rem;
     background: #fff;
 }
+    
 .m-titleWithSubTitle {
     padding: .28rem 0;
     width: 100%;

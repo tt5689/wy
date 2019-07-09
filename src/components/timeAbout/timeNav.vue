@@ -1,7 +1,7 @@
 <template>
   <div class="screen-tabs">
     <ul class="t-inner">
-      <li class="t-item" v-for="(item,index) in timeList" :key="index">
+      <li  v-for="(item,index) in timeList" :key="index" :class="item.status ==1?'t-item liactive':'t-item'">
         <p :class ="item.status ==1?'active time':'time'">{{item | toHou}}:00</p>
         <p :class ="item.status ==1?'tactive statusTxt':'statusTxt'" >{{item | timeText}}</p>
       </li>
@@ -86,10 +86,7 @@ export default {
   text-align: center;
   line-height: 0.36rem;
 }
-.active{
-    opacity: 1;
-    font-weight: 900;
-}
+
 .statusTxt {
   margin-top: 0.02rem;
   color: #fff;
@@ -103,5 +100,9 @@ export default {
     color: red;
     opacity: 1;
     border-radius: .08rem;
+}
+.active{
+    opacity: 1;
+    font-weight: 900;
 }
 </style>

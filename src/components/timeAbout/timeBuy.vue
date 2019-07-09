@@ -138,7 +138,7 @@ export default {
     height: 100%;
 }
 .sc-right{
-    width: 3.6rem;
+    width: 50%;
     float: right;
 }
 .innerName{

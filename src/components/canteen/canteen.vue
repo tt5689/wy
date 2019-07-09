@@ -4,9 +4,8 @@
         <div class="canmain">
             <CanBann />
             <Welfare />
-            <CanNav ref="scrolNav"/>
+            <CanNav/>
             <TicketCenter/>
-            <!-- 这里要用利用父传子 -->
             <Lowerprice v-for="(item,index) in abPriceList" :key="index" :aPList="item"/>
             <ComposeWrap v-for="(item,index) in valueList" :key="index" :vBList="item"/>
             <Amazing/>
@@ -42,39 +41,14 @@ export default {
         if(data && data.saleModuleTypeVO){
             this.abPriceList  = data.saleModuleTypeVO[1].saleModuleVO || [];
             this.valueList  = data.saleModuleTypeVO[2].saleModuleVO || [];
-        }   
+        } 
     },
     data(){
         return{
             abPriceList:[],
-            valueList:[],
-            navTop: "" //记录刚进入页面nav距离top的值
+            valueList:[]
         }
-    },
-  mounted() {
-    window.addEventListener("scroll", this.handlerScroll);
-    this.navTop = this.offset(this.$refs.scrolNav);
-  },
-  methods: {
-    handlerScroll() {
-      var scrollTop =
-        window.pageXOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop;
-      if (scrollTop >= this.navTop) {
-      }
-    },
-    offset(obj) {
-      var t = 0;
-      while (obj) {
-        t += obj.offsetTop;
-        obj = obj.offsetParent;
-        if ((obj = document.body)) {
-          return t;
-        }
-      }
     }
-  }
 
 }
 </script>
