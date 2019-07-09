@@ -164,7 +164,7 @@ export default {
         border-radius: .2rem;
         width: 2.73rem;
         height: .4rem;
-        background-color: #cc3339;
+        background-color: #345842;
         opacity: 0.7;
         display: flex;
         justify-content: center;

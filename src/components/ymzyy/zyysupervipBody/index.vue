@@ -11,50 +11,10 @@
             </div>
             <img class="vipimg" src="http://yanxuan.nosdn.127.net/12351482c5fc84f7fa7be329e6ec8f95.png">
             <ul class="vipNightico">
-                <li>
+                <li v-for="(item,index) in zyyNavlist" :key="index">
                     <i class="iconfont iconche-tianchong"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont iconzhekou"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont icongouwudai"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont icon-shiyong"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont iconjipiao"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont iconbaifenhao"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont iconrenminbicaiwuzhifu"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont icondunpaisuo"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
-                </li>
-                <li>
-                    <i class="iconfont iconiconfontunie62c"></i>
-                    <span>36张/年</span>
-                    <b>每月免邮卷</b>
+                    <span>{{item.simpleDesc}}</span>
+                    <b>{{item.name}}</b>
                 </li>
             </ul>
         </div>
@@ -73,12 +33,13 @@
             </div>
         </div>
         <div class="img_one">
-            <div class="img_oneL">
-                <img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120">
+            <div class="img_oneL" v-for="(item,index) in zyyOpenGiftInfos" :key="index">
+                <img :src="item.picUrl">
+                <!-- <img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"> -->
             </div>
-            <div class="img_oneR">
+            <!-- <div class="img_oneR">
                 <img src="https://yanxuan.nosdn.127.net/a81dd3d443be10cd7d49bdb933869d0d.png?imageView&quality=65&thumbnail=690x120">
-            </div>
+            </div> -->
         </div>
         <div class="img_two">
             <img src="https://yanxuan.nosdn.127.net/16602a11b02f925b8b47edf8d9e1b133.png?imageView&quality=65&thumbnail=690x160">
@@ -90,46 +51,19 @@
         </div>
         <div class="vipTry">
             <div class="vipTryO">
-                <span>免费试用</span>
+                <span v-text="zyyThreeclass.name"></span>
                 <i>权益详情&gt;</i>
             </div>
-            <div class="vipTryT">每月上新，免费领1件，全年最多可领12件</div>
+            <div class="vipTryT" v-text="zyyThreeclass.simpleDesc"></div>
         </div>
         <div class="vipTryList">
             <ul>
-                <li class="vipTryListS">
-                    <img src="https://yanxuan.nosdn.127.net/7988cb4d08a51a8f7dc183f4787c2302.png?imageView&quality=65&thumbnail=330x330">
-                    <span>降温贴（儿童款）</span>
+                <li class="vipTryListS" v-for="(item,index) in zyyModuleCommonItemList" :key="index">
+                    <img :src="item.listPicUrl">
+                    <span>{{item.name}}</span>
                     <div>
-                        <i>￥0</i>
-                        <b>￥35</b>
-                    </div>
-                    <h3>立即领取</h3>
-                </li>
-                <li class="vipTryListS">
-                    <img src="https://yanxuan.nosdn.127.net/7988cb4d08a51a8f7dc183f4787c2302.png?imageView&quality=65&thumbnail=330x330">
-                    <span>降温贴（儿童款）</span>
-                    <div>
-                        <i>￥0</i>
-                        <b>￥35</b>
-                    </div>
-                    <h3>立即领取</h3>
-                </li>
-                <li class="vipTryListS">
-                    <img src="https://yanxuan.nosdn.127.net/7988cb4d08a51a8f7dc183f4787c2302.png?imageView&quality=65&thumbnail=330x330">
-                    <span>降温贴（儿童款）</span>
-                    <div>
-                        <i>￥0</i>
-                        <b>￥35</b>
-                    </div>
-                    <h3>立即领取</h3>
-                </li>
-                <li class="vipTryListS">
-                    <img src="https://yanxuan.nosdn.127.net/7988cb4d08a51a8f7dc183f4787c2302.png?imageView&quality=65&thumbnail=330x330">
-                    <span>降温贴（儿童款）</span>
-                    <div>
-                        <i>￥0</i>
-                        <b>￥35</b>
+                        <i>￥{{item.primarySkuPreSellPrice}}</i>
+                        <b>￥{{item.counterPrice}}</b>
                     </div>
                     <h3>立即领取</h3>
                 </li>
@@ -137,77 +71,22 @@
         </div>
         <div class="svipPrice">
             <div class="vipPrice">
-                <span>超级会员价</span>
+                <span v-text="zyyOneclass.name"></span>
                 <i>权益详情&gt;</i>
             </div>
-            <div class="vipTryT">95折起专享价，可叠加券和红包</div>
+            <div class="vipTryT" v-text="zyyOneclass.simpleDesc"></div>
         </div>
         <div class="svipPriceList">
             <ul>
-                <li class="svipPriceListLi">
+                <li class="svipPriceListLi" v-for="(item,index) in zyyModuleCommon" :key="index">
                     <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
+                        <img :src="item.listPicUrl">
+                        <em>{{item.subtractPriceDesc}}</em>
                     </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
+                    <div class="svipPriceListLi_two">{{item.name}}</div>
                     <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
-                    </div>
-                </li>
-                <li class="svipPriceListLi">
-                    <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
-                    </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
-                    <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
-                    </div>
-                </li>
-                <li class="svipPriceListLi">
-                    <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
-                    </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
-                    <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
-                    </div>
-                </li>
-                <li class="svipPriceListLi">
-                    <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
-                    </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
-                    <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
-                    </div>
-                </li>
-                <li class="svipPriceListLi">
-                    <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
-                    </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
-                    <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
-                    </div>
-                </li>
-                <li class="svipPriceListLi">
-                    <div class="svipPriceListLi_one">
-                        <img src="https://yanxuan.nosdn.127.net/63967eb40b0af505f1fd066442952bab.png?imageView&thumbnail=216x216&quality=85">
-                        <em>省￥21.4</em>
-                    </div>
-                    <div class="svipPriceListLi_two">24寸 纯PC“铝框”（非全铝）拉杆箱</div>
-                    <div class="svipPriceListLi_three">
-                        <b>￥407.6</b>
-                        <i>￥429</i>
+                        <b>￥{{item.retailPrice}}</b>
+                        <i>￥{{item.counterPrice}}</i>
                     </div>
                 </li>
             </ul>
@@ -215,105 +94,26 @@
 
         <div class="vipTry">
             <div class="vipFastBuy">
-                <span>超级闪购</span>
+                <span>{{zyyFourclass.name}}</span>
                 <i>权益详情&gt;</i>
             </div>
-            <div class="vipTryT">限时限量低价购，每天0点更新</div>
+            <div class="vipTryT">{{zyyFourclass.simpleDesc}}</div>
         </div>
         
         <ul class="lastList">
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
+            <li class="lastListS" v-for="(item,index) in zyyExclusiveCoupons" :key="index">
+                <img src="http://yanxuan.nosdn.127.net/4edb1654af457e1a7d4f176032df479f.png">
                 <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
+                    <div class="lastListRone">{{item.amount}}元</div>
                     <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
-                <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
-                    <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
-                <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
-                    <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
-                <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
-                    <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
-                <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
-                    <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <img src="https://yanxuan.nosdn.127.net/fddaa18690fa0b53d2d59ab7bd26b8f9.png">
-                <div class="lastListR">
-                    <h3>专项7.6折</h3>
-                    <span>限时限量低价购，每天0点更新</span>
-                    <div class="lastListRone">
-                        <i>￥189</i>
-                        <b>￥249</b>
-                    </div>
-                    <div class="lastListRtwo">
-                        <i>仅剩62件</i>
-                        <span>立即抢购</span>
+                        <span>{{item.name}}</span>
+                        <i>{{item.rangeName}}</i>
                     </div>
                 </div>
             </li>
         </ul>
-
+        <div class="zyyGetnow"><span>立即领取&gt;</span></div>
+        <div class="borderBox"></div>
         <div class="vipTry">
             <div class="vipFastBuy">
                 <span>专属免邮券</span>
@@ -324,17 +124,20 @@
         <div class="bottomOne">
             <img src="https://yanxuan.nosdn.127.net/e4c0feaeef91ec35910c63614001e472.png?imageView&quality=65&thumbnail=690x0">
         </div>
-        
+
+        <div class="borderBox"></div>
+
         <div class="vipTry">
             <div class="vipFastBuy">
-                <span>双倍积分</span>
+                <span v-text="zyySixclass.name"></span>
                 <i>权益详情&gt;</i>
             </div>
-            <div class="vipTryT">超级会员购物双倍返积分，积分可兑好礼</div>
+            <div class="vipTryT" v-text="zyySixclass.simpleDesc"></div>
         </div>
-        <div class="borderBox"></div>
+        
+        
         <div class="bottomTwo">
-            <img src="https://yanxuan.nosdn.127.net/7aed7527f37167c0800c75ab76fb7004.png?imageView&quality=65&thumbnail=690x0">
+            <img :src="zyySixclass.modulePicUrl">
         </div>
         <div class="bottomLast">
             更多超级会员专属权益，敬请期待
@@ -354,11 +157,35 @@ export default {
     // await要在anync里用，anync代表异步,代表当前函数是异步函数
     async created() {
         let data = await gteZyysuper();
-        this.zyysupervipList = data.data;        
+        this.zyysupervipList = data.data;
+        this.zyyOpenGiftInfos = this.zyysupervipList.openGiftInfos;
+        this.zyyPrivilegeModuleMap = this.zyysupervipList.privilegeModuleMap;
+        // this.zyyPrivilegeList = this,zyysupervipList.privilegeList;
+        this.zyyOneclass = this.zyyPrivilegeModuleMap[101];
+        this.zyyThreeclass = this.zyyPrivilegeModuleMap[103];
+        this.zyyModuleCommonItemList = this.zyyPrivilegeModuleMap[103].moduleCommonItemList;
+        this.zyyModuleCommon = this.zyyPrivilegeModuleMap[101].moduleCommonItemList;
+        this.zyyExclusiveCoupons = this.zyyPrivilegeModuleMap[104].exclusiveCoupons;
+        this.zyySixclass = this.zyyPrivilegeModuleMap[106];
+        this.zyyFourclass = this.zyyPrivilegeModuleMap[104];
+        this.zyyNavlist = this.zyysupervipList.memInfo.privilegeList;
+        console.log(this.zyyNavlist);
+        
+              
     },
     data() {
         return {
+            zyyNavlist:[],
             zyysupervipList:[],
+            zyyOpenGiftInfos:[],
+            zyyPrivilegeModuleMap:[],
+            zyyModuleCommonItemList:[],
+            zyyModuleCommon:[],
+            zyyExclusiveCoupons:[],
+            zyySixclass:[],
+            zyyThreeclass:[],
+            zyyOneclass:[],
+            zyyFourclass:[]
         }
     },
 }
@@ -524,22 +351,23 @@ export default {
     .img_oneL {
         width: 100%;
         height: 100%; 
-        margin-left: .3rem;  
+        margin: 0 .2rem;
+        padding-right: .3rem; 
     }
-    .img_oneR {
+    /* .img_oneR {
         margin-left: .5rem;
         padding-right: .35rem;
         width: 100%;
         height: 100%;   
-    }
+    } */
     .img_oneL img {
         width: 6.9rem;
         height: 100%;   
     }
-    .img_oneR img {
+    /* .img_oneR img {
         width: 6.9rem;
         height: 100%;
-    }
+    } */
     .img_two {
         width: 6.9rem;
         height: 1.6rem;
@@ -599,17 +427,19 @@ export default {
         color: #7F7F7F;
     }
     .vipTryList {
-        height: 4.52rem;
+        height: 5.3rem;
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: flex-start; */
         border-bottom: .2rem solid #eee;
+        overflow-x: auto;
     }
     .vipTryList ul{
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: space-between  ;
+        justify-content: flex-start;
         overflow-x: auto;
         overflow-y: hidden;
         align-items: center;
@@ -627,7 +457,10 @@ export default {
         height: 2.8rem;
     }
     .vipTryListS span {
-        font-size: .28rem;
+        display: inline-block;
+        width: 2.8rem;
+        height: 1rem;
+    font-size: .28rem;
         color: #666;
     }
     .vipTryListS div {
@@ -656,7 +489,7 @@ export default {
     }
     .svipPriceList {
         width: 100%;
-        height: 7.1rem;
+        height: 6.3rem;
         border-bottom: .2rem solid #eee;
     }
     .svipPriceList ul {
@@ -694,6 +527,8 @@ export default {
         border-radius: 0 5px 5px 0;
     }
     .svipPriceListLi_two {
+        overflow: hidden;
+        text-overflow: ellipsis;
         width: 2.16rem;
         height: .36rem;
         line-height: .36rem;
@@ -718,99 +553,93 @@ export default {
         text-decoration:line-through;
     }
     .lastList {
-        width: 100%;
-        min-height: 8rem;
+        width: 7.5rem;
+        height: 3rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0 .2rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: .2rem solid #eee;
+        position: relative;
     }
-    .lastList li {
-        width: 6.9rem;
-        height: 3.1rem;
-        display: flex;
+    .lastListS {
+        width: 6rem;
+        height: 3rem;
+        margin-left: .2rem;
     }
-    .lastList li img {
-        background-color: #f4f4f4;;
-        width: 2.8rem;
-        height: 2.8rem;
+    .lastListS img {
+        display: block;
+        /* width: 100%; */
+        height: 80%;
     }
     .lastListR {
-        margin-left: .2rem;
-        width: 3.66rem;
+        width: 4.66rem;
         height: 2.8rem;
         display: flex;
-        flex-direction: column;
         justify-content: space-around;
-    }
-    .lastListR h3 {
-        height: .3rem;
-        width: 1.4rem;
-        font-size: .24rem;
-        background-color: #5f5034;
-        color: #dcccac;
-        text-align: center;
-        line-height: .3rem;
-    }
-    .lastListR span {
-        height: .3rem;
-        width: 100%;
-        font-size: .24rem;
+        position: absolute;
+        top: .95rem;
+        margin-left: .75rem;
+
     }
     .lastListRone {
-        display: flex;
-        height: .4rem;
-        width: 100%;
-    }
-    .lastListRone i {
-        color: #b9383d;
-        width: .7rem;
-    }
-    .lastListRone b {
-        width: .7rem;
-        color: #7f7f7f;
-        text-decoration:line-through;
+        width: 2rem;
+        height: 1rem;
+        font-size: .4rem;
+        color: #2A2315;
     }
     .lastListRtwo {
+        height: 6rem;
+        width: 4rem;
+        font-size: .24rem;
         display: flex;
-        justify-content: space-between;
-        height: .4rem;
-        width: 100%;
+        flex-direction: column;
         align-items: center;
-    }
-    .lastListRtwo i {
-        height: 0.3rem;
-        line-height: .3rem;
-        width: 1.2rem;
-        border: 1px solid #dbc59f;
-        color: #dbc59f;
-        text-align: center; 
-        border-radius: .1rem;
+        margin-left: 0.9rem;
     }
     .lastListRtwo span {
-        height: .58rem;
-        width: 1.4rem;
-        background-color: #dbc59f;
-        color: #fff;
-        font-size: .28rem;
         text-align: center;
-        line-height: .58rem;
+        width: 100%;
+        font-size: .28rem;
+        color: #2A2315
+    }
+    .lastListRtwo i {
+        display: block;
+        text-overflow: ellipsis;
+        width: 2.5rem;
+        color: #dbc59f;
+        text-align: center;
+        overflow: hidden;
+        height: 3rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .zyyGetnow {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: .9rem;
+    }
+    .zyyGetnow span {
+        text-align: center;
+        font-size: .28rem;
+        color: #dbc59f;
     }
     .bottomOne {
         width: 6.9rem;
-        height: 3rem;
+        height: 3.5rem;
     }
     .bottomOne img {
         width: 100%;
-        height: 100%;
+        height: 3rem;
     }
     .bottomTwo {
         width: 6.9rem;
-        height: 3rem;
+        height: 3.5rem;
     }
     .bottomTwo img {
         width: 100%;
-        height: 100%;
+        height: 3rem;
     }
     .borderBox {
         border-bottom: .2rem solid #eee;
