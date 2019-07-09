@@ -20,7 +20,7 @@
                         </div>
                         <p>{{item.name}}</p>
                         <span class="selling">{{item.simpleDesc}}</span>
-                        <span class="price">{{item.counterPrice}}</span>
+                        <span class="price">￥{{item.counterPrice}}</span>
                     </div>
                 </a>
             </div>
