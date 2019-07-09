@@ -22,8 +22,10 @@ export default {
         MainContent
         
     },
-    created() {
-       console.log(this.$route.meta.flag);
+    computed: {
+      ...mapState({
+        homeNav:state=>state.home.homeNav
+      })
     },
   components: {
     Header,

@@ -28,6 +28,7 @@
 export default {
     props:{
         list:{
+            type:Array,
             default:['shou','推挤','推挤','推挤','推挤','推挤','推挤','推挤']
         }
     },
