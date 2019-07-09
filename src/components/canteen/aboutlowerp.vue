@@ -8,7 +8,7 @@
             <a v-for="(item,index) in aPList.itemList" :key="index">
                 <img :src="item.listPicUrl"/>
                 <p class="gname">{{item.name}}</P>
-                <div class="tpri"><span>{{item.retailPrice}}</span><i>{{item.counterPrice}}</i></div>
+                <div class="tpri"><span>￥{{item.retailPrice}}</span><i>￥{{item.counterPrice}}</i></div>
                 <div class="tag">
                     <p v-for="(item1,index1) in item.itemTagList" :key="index1">{{item1.name}}</p>
                 </div>
