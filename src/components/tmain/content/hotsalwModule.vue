@@ -2,19 +2,28 @@
     <div class="t-hotsale">
         <h2>类目热销榜</h2>
         <ul>
-            <li>
-                <a href="#"><p>热销榜</p></a>
-            </li>
-            <li>
-                <a href="#"><p>好评榜</p></a>
-            </li>
+            <router-link v-for="(item,index) in classList" :key="index" :to="'/zyyhotsales'" tag="li" >
+                <a href="#">
+                    <p>{{item.categoryName}}</p>
+                    <img :src="item.picUrl"/>
+                </a>
+            </router-link>
         </ul>
     </div>
 </template>
 
 <script>
+import {categoryHotSellModule} from 'api/home/thome.js'
 export default {
-    
+    async mounted() {
+        let d =  await  categoryHotSellModule();
+        this.classList = d.data;
+    },
+    data(){
+        return {
+            classList:[]
+        }
+    },
 }
 </script>
 
@@ -36,7 +45,7 @@ export default {
             li{
                 width: 1.66rem;
                 height: 1.8rem;
-                background: pink;
+                background-color: #F5F5F5;
                 margin-bottom: .12rem;
                 p{
                     font-size: .22rem;
@@ -45,15 +54,25 @@ export default {
                     display: block;
                     width: 100%;
                     height: 100%;
+                    img{
+                        width: 1.2rem;
+                        height: 1.2rem;
+                    }
                 }
             }
             li:nth-of-type(1),li:nth-of-type(2){
                 width: 48%;
                 height: 2rem;
-                background: pink;
+                background-color: #F9F3E4;
                 p{
                     font-size: .28rem;
                     padding: .56rem 0 0 .26rem;
+                    float: left;
+                }
+                img{
+                    float: right;
+                    width: 2rem;
+                    height: 2rem;
                 }
             }
         }

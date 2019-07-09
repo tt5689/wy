@@ -2,11 +2,11 @@
   <div class="time_by">
       <CommHead :val="title"/>
       <ul>
-          <li>
-              <a>
-                  <img src="https://yanxuan.nosdn.127.net/c42809e7f5968367edc8f34058a4da08.png"/>
-                  <p>1111<i>2222</i></p>
-              </a>
+          <li v-for="(item,index) in axoisData" :key="index">
+                <router-link to="/timeB" tag='a'>
+                  <img :src="item.showPicUrl"/>
+                  <p>￥{{item.activityPrice}}<i>￥{{item.originPrice}}</i></p>
+              </router-link>
           </li>
       </ul>
   </div>
@@ -14,9 +14,20 @@
 
 <script>
 import CommHead from './commHead.vue';
+import {flashSaleModule} from 'api/home/thome.js'
 export default {
   components: {
     CommHead
+  },
+  async created() {
+   let data = await  flashSaleModule();
+   data.data.itemList.forEach(element => {
+     var obj = {};
+     obj.activityPrice = element.activityPrice;
+     obj.originPrice = element.originPrice;
+     obj.showPicUrl = element.showPicUrl;
+     this.axoisData.push(obj);
+   });
   },
   data() {
     return {
@@ -25,6 +36,7 @@ export default {
       seconds:'',
       timer3:'',
       title: `限时购<span><i>00</i>:<i>11</i>:<i>22</i></span>`,
+      axoisData:[]
     };
   },
   mounted() {

@@ -7,20 +7,20 @@
         </ul>
         <div class="t-list">
             <a href="javascript:;" v-for="(item,index) in data" :key="index">
-                <img :src="imgs"/>
-                <p>{{item}}</p>
+                <img :src="item.picUrl"/>
+                <p>{{item.text}}</p>
             </a>
         </div>
     </div>
 </template>
 
 <script>
+import {mapState,mapActions} from "vuex";
 export default {
-    data() {
-        return {
-            imgs:'https://yanxuan.nosdn.127.net/c6fd8835a6400b7da7a016ad85506b69.png',
-             data:['shou','推挤','推挤','推挤','推挤','推挤','推挤','推挤','推挤','推挤']
-        }
+    computed: {
+        ...mapState({
+            data:state=>state.home.classList,
+        })
     },
 }
 </script>

@@ -1,13 +1,14 @@
 <template>
     <div class="newItemModule">
         <CommHead :val="title"/>
-        <TGoodList/>
+        <TGoodList :newList="axiosGetList"/>
     </div>
 </template>
 
 <script>
 import CommHead from './commHead.vue'
 import TGoodList from './tgoodList.vue'
+import {newItemList} from 'api/home/thome.js'
 export default {
      components:{
         CommHead,
@@ -15,8 +16,21 @@ export default {
     },
     data() {
         return {
-            title:'新品首发'
+            title:'新品首发',
+            axiosGetList:[]
         }
+    },
+    async mounted() {
+        let dt = await newItemList();
+        dt.data.forEach(element => {
+            var obj = {};
+            obj.itemTagList= element.itemTagList;
+            obj.name = element.name;
+            obj.simpleDesc = element.simpleDesc;
+            obj.retailPrice= '￥'+element.retailPrice;
+            obj.showPicUrl = element.showPicUrl;
+            this.axiosGetList.push(obj);
+        });
     },
 }
 </script>

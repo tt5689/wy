@@ -5,14 +5,9 @@
             <span>吃穿家清, 每周有新折扣</span>
         </div>
         <ul>
-            <li>
+            <li v-for ="(item,index) in fuList" :key="index">
                 <a href="#">
-                    <img src="https://yanxuan.nosdn.127.net/da3a9f3d81bda520c769a0fceb4f128e.jpg"/>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="https://yanxuan.nosdn.127.net/da3a9f3d81bda520c769a0fceb4f128e.jpg"/>
+                    <img :src="item.bigImageUrl"/>
                 </a>
             </li>
         </ul>
@@ -23,18 +18,28 @@
 </template>
 
 <script>
+import {getcanteen} from "api/canteen";
 export default {
-    
+   async created(){
+        let data = await getcanteen();
+        data = data.data;
+        this.fuList = data.saleAdPositionVOList;
+    },
+    data() {
+        return {
+            fuList:[]
+        }
+    },
+
 }
 </script>
 
 <style lang="scss" scoped>
     .welfareWrap{
-        height: 5.78rem;
+        min-height: 5.78rem;
         background: #fff;
         margin-bottom: .2rem;
         padding: 0 .3rem;
-        overflow-x: scroll;
         strong{
             line-height: .8rem;
             font-size: .3rem;
@@ -48,12 +53,15 @@ export default {
         ul{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             margin-bottom: .24rem;
+            width: 100%;
             li{
-                width: 3.4rem;
+                width: 48%;
                 height: 3.7rem;
                 flex-shrink: 0;
                 margin-right: .1rem;
+                margin-bottom: .04rem;
                 a,img{
                     display: block;
                     width: 100%;

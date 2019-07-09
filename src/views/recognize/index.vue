@@ -25,6 +25,9 @@
    
 </div>
 </template>
+    
+
+
 <script>
 import Recbody from "components/recbody"
 export default {
@@ -108,4 +111,3 @@ ul li{
 
 
 </style>
-

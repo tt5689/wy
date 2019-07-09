@@ -1,44 +1,26 @@
 <template>
-<div>
-    <ul>
-        <!-- <router-link v-for="(item,index) in goods" :key="index"
-        :to="'/mine/'+item.goodsId+'/'+item.goodsName"
-        > -->
-        <router-link v-for="(item,index) in goods" :key="index"
-        :to='{name:"mine",params:{id:item.goodsId,name:item.goodsName}}'
-        >
-        <p>{{item.goodsName}}</p>
-        </router-link>
-    </ul>
+<div class="shopCar">
+<CarHeader/>
+<CarFloor/>
+<CarList/>
 </div>
 </template>
 <script>
+import CarHeader from 'components/shopingCar/carHead.vue'
+import CarFloor from 'components/shopingCar/carfooter.vue'
+import CarList from 'components/shopingCar/goodList.vue'
 export default {
-     data(){
-        return {
-            goods:[
-                {
-                    goodsId:1,
-                    goodsName:"商品1"
-                },
-                 {
-                    goodsId:2,
-                    goodsName:"商品2"
-                },
-                 {
-                    goodsId:3,
-                    goodsName:"商品3"
-                },
-                 {
-                    goodsId:4,
-                    goodsName:"商品4"
-                },
-            ]
-        }
-    },
+    components:{
+        CarHeader,
+        CarFloor,
+        CarList
+    }
 }
 </script>
-<style>
-
+<style scoped>
+.shopCar{
+    padding-bottom: 1.98rem;
+    background: #eee;
+}
 </style>
 

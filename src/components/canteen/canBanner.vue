@@ -1,16 +1,25 @@
 <template>
     <div class="canbanner">
-        <a href="javascript">
-          <img src="https://yanxuan.nosdn.127.net/ad119d556cb9f10c1ad55f5bac36585e.jpg" />
-        </a>
-        <a href="javascript">
-          <img src="https://yanxuan.nosdn.127.net/ad119d556cb9f10c1ad55f5bac36585e.jpg" />
+        <a href="javascript" v-for="(item,index) in bannerList" :key="index">
+          <img :src="item.picUrl" />
         </a>
       </div>
 </template>
 
 <script>
+import {getcanteen} from "api/canteen";
 export default {
+   async created(){
+        let data = await getcanteen();
+        data = data.data;
+        this.bannerList = data.saleBanner;
+    },
+   
+  data() {
+    return {
+      bannerList:[]
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>
