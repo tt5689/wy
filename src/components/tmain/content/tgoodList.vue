@@ -1,11 +1,11 @@
 <template>
     <ul>
         <li  v-for="(item,index) in receriveDataList" :key="index">
-            <a>
+            <router-link to="xiangqing" tag="a">
                 <img :src='item.showPicUrl'/>
                 <p>{{item.name}}<i>{{item.retailPrice}}</i></p>
                 <span v-for="(item1,index) in item.itemTagList" :key="index">{{item1.name}}</span>
-            </a>
+            </router-link>
         </li>
     </ul>
 </template>
