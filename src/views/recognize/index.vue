@@ -9,10 +9,10 @@
             <a class="fx" href="">发现</a>
             <a class="zxj" href="">甄选家</a>
         </div>
-        <div class="top-right">
+        <router-link to="views/search" tag="div" class="top-right">
             <i class="iconfont iconfangdajing"></i>
             <i class="iconfont icongouwuche"></i>
-        </div>
+        </router-link>
     </div>
     <ul class="list">
         <router-link to="/recognize/tj" tag="li">推荐</router-link>

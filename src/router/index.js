@@ -15,6 +15,8 @@ import zyysupervip from './zyysupervip'
 import canteen from './canteen'
 import newPerson from './newPerson'
 import timeBy from './timeby'
+import xiangqing from './xiangqing'
+import search from './search'
 export default new Router({
   routes: [
     {
@@ -23,6 +25,8 @@ export default new Router({
     },
     classfiy,
     home,
+    xiangqing,
+    search,
     mine,
     shopcar,
     recognize,

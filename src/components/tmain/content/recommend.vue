@@ -2,7 +2,7 @@
     <div class="recommend_wrap">
         <CommHead :val="title"/>
         <div class="recom_top">
-            <a href="javascript:;">
+            <a href="#">
                 <img :src="topI.showPicUrl"/>
                 <div class="good_tip">
                     <p v-for="(limi,index1) in topI.itemTagList" :key="index1">{{limi.name}}</p>

@@ -1,11 +1,11 @@
 <template>
 
 <div id="box_dcp">
-    <div class="top_dcp">
+    <router-link :to="'/search'" tag="div" class="top_dcp">
         <i class="iconfont iconfangdajing"></i>
         <input type="text" placeholder="搜索商品, 共22438款好物"/>
         
-    </div>
+    </router-link>
 </div>
 
 
