@@ -7,7 +7,7 @@
             <CanNav/>
             <TicketCenter/>
             <Lowerprice v-for="(item,index) in abPriceList" :key="index" :aPList="item"/>
-            <ComposeWrap v-for="(item,index) in valueList" :key="index" :vBList="item"/>
+            <ComposeWrap v-for="(itm,idx) in valueList" :key="idx" :vBList="itm"/>
             <Amazing/>
         </div>
     </div>
@@ -38,9 +38,9 @@ export default {
     async created(){
         let data = await getcanteen();
         data = data.data;
-        if(data && data.saleModuleTypeVO){
-            this.abPriceList  = data.saleModuleTypeVO[1].saleModuleVO || [];
-            this.valueList  = data.saleModuleTypeVO[2].saleModuleVO || [];
+        if(data.saleModuleTypeVO.length>=3){
+            this.abPriceList  = data.saleModuleTypeVO[1].saleModuleVO ;
+            this.valueList  = data.saleModuleTypeVO[2].saleModuleVO ;
         } 
     },
     data(){

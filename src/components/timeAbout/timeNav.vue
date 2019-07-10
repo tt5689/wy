@@ -1,7 +1,7 @@
 <template>
-  <div class="screen-tabs">
-    <ul class="t-inner">
-      <li  v-for="(item,index) in timeList" :key="index" :class="item.status ==1?'t-item liactive':'t-item'">
+  <div class="screen-tabs" ref="screen">
+    <ul class="t-inner" ref="list">
+      <li ref="item"  v-for="(item,index) in timeList" :key="index" :class="item.status ==1?'t-item liactive':'t-item'">
         <p :class ="item.status ==1?'active time':'time'">{{item | toHou}}:00</p>
         <p :class ="item.status ==1?'tactive statusTxt':'statusTxt'" >{{item | timeText}}</p>
       </li>
@@ -11,6 +11,7 @@
 
 <script>
 import { getTime } from "api/timeBuy";
+import BScroll from 'better-scroll'
 import Vue from 'vue';
 Vue.filter('toHou',(val)=>{
     var date = new Date(val.startTime);
@@ -39,6 +40,9 @@ Vue.filter('timeText',(val)=>{
     }
 })
 export default {
+  conponents:{
+
+  },
   data() {
     return {
       timeList: []
@@ -49,12 +53,35 @@ export default {
     if (data.data) {
      this.timeList = data.data.screenList;
     }
+    this.$nextTick(()=>{
+      let width = 0;
+      this.$refs.item.map( item =>{
+        width += item.offsetWidth;
+      })
+      this.$refs.list.style.width = (width+30)+'px';
+      var BS = new BScroll( '.screen-tabs',{
+        scrollX:true,
+        scrollY:false,
+        click:true,
+      })
+      let moveWidth = 0;
+      let n = 0;
+      for(var i =0;i<this.timeList.length;i++){
+        n++;
+        if(this.timeList[i].status == 1){
+          break;
+        }
+      }
+      moveWidth = -(n-3)*this.$refs.item[0].offsetWidth -14;
+      BS.scrollTo(moveWidth,0,1000);
+    })
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .screen-tabs {
+  background:red;
   height: 1.04rem;
   border-top-left-radius: 0.10667rem;
   border-top-right-radius: 0.10667rem;

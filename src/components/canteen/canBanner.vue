@@ -1,12 +1,13 @@
 <template>
     <div class="canbanner">
-        <a href="javascript" v-for="(item,index) in bannerList" :key="index">
-          <img :src="item.picUrl" />
-        </a>
+            <a href="javascript" v-for="(item,index) in bannerList" :key="index">
+              <img :src="item.picUrl" />
+            </a>
       </div>
 </template>
 
 <script>
+import Banner from 'components/tmain/content/banner.vue';
 import {getcanteen} from "api/canteen";
 export default {
    async created(){

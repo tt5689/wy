@@ -24,8 +24,8 @@
                         </div>
                     </a>
                 </div>
-            </div>
-        </div>
+            </div> 
+    </div>
 </template>
 
 <script>
@@ -37,7 +37,8 @@ export default {
             minutes:'',
             seconds:'',
             timestamps:'',
-            itemList:[]
+            itemList:[],
+            timer:''
         }
     },
     async created() {
@@ -53,7 +54,7 @@ export default {
             }
         }
         var timestamp = time1 - data.data.currentTime;
-        this.timestamps = timestamp /1000;
+        this.timestamps = timestamp ;
         this.hours = Math.floor((timestamp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         this.minutes = Math.floor((timestamp % (1000 * 60 * 60)) / (1000 * 60));
         this.seconds = Math.round((timestamp % (1000 * 60)) / 1000);
@@ -62,21 +63,21 @@ export default {
         this.seconds = this.seconds <10 ? '0'+this.seconds:this.seconds;
         }        
     },
-    // watch: {
-    //   timestamps(){
-    //       if(this.timestamps <= 0){
-    //           this.timestamps = 0;
-    //       }
-    //       this.timestamps --;
-    //       this.hours = Math.floor((this.timestamps % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //         this.minutes = Math.floor((this.timestamps % (1000 * 60 * 60)) / (1000 * 60));
-    //         this.seconds = Math.round((this.timestamps % (1000 * 60)) / 1000);
-    //         this.hours = this.hours >10 ? this.hours :'0'+this.hours;
-    //         this.minutes = this.minutes <10 ? '0'+this.minutes:this.minutes;
-    //         this.seconds = this.seconds <10 ? '0'+this.seconds:this.seconds;
-            
-    //   }  
-    // },
+    mounted() {
+        this.timer = setInterval(()=>{
+            if(this.timestamps <=0){
+                this.timestamps = 0;
+                clearInterval(this.timer);
+            }
+            this.timestamps =(this.timestamps/1000 -1)*1000;
+            this.hours = Math.floor((this.timestamps % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            this.minutes = Math.floor((this.timestamps % (1000 * 60 * 60)) / (1000 * 60));
+            this.seconds = Math.round((this.timestamps % (1000 * 60)) / 1000);
+            this.hours = this.hours >10 ? this.hours :'0'+this.hours;
+            this.minutes = this.minutes <10 ? '0'+this.minutes:this.minutes;
+            this.seconds = this.seconds <10 ? '0'+this.seconds:this.seconds;
+        },1000)
+    },
 }
 </script>
 

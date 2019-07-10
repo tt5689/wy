@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import VueTouch from 'vue-touch'
+import "common";
+
 Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.config.productionTip = false
