@@ -1,13 +1,13 @@
 <template>
     <div class="wiew-top">
             <h1 v-html="val"></h1>
-            <a href="#">更多 > </a>
+            <router-link :to ="fla?'/timeB':''" tag ='a'>更多 > </router-link>
         </div>
 </template>
 
 <script>
 export default {
-    props:['val']
+    props:['val','fla']
 }
 </script>
 

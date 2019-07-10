@@ -1,26 +1,26 @@
 <template>
-    <div class="canbanner">
-            <a href="javascript" v-for="(item,index) in bannerList" :key="index">
-              <img :src="item.picUrl" />
-            </a>
-      </div>
+  <div class="canbanner">
+    <a href="javascript" v-for="(item,index) in bannerList" :key="index">
+      <img :src="item.picUrl" />
+    </a>
+  </div>
 </template>
 
 <script>
-import Banner from 'components/tmain/content/banner.vue';
-import {getcanteen} from "api/canteen";
+import Banner from "components/tmain/content/banner.vue";
+import { getcanteen } from "api/canteen";
 export default {
-   async created(){
-        let data = await getcanteen();
-        data = data.data;
-        this.bannerList = data.saleBanner;
-    },
-   
+  async created() {
+    let data = await getcanteen();
+    data = data.data;
+    this.bannerList = data.saleBanner;
+  },
+
   data() {
     return {
-      bannerList:[]
-    }
-  },
+      bannerList: []
+    };
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -1,27 +1,48 @@
 <template>
   <div class="m-cartFt">
-    <input type="checkbox" />
+    <input type="checkbox" :checked="selected" @change="handlerToggle"/>
     <span>
       已选
-      <i>1</i>件
+      <i>{{count.selectN}}</i>件
     </span>
-    <strong>
+    <strong v-if="fla">
       合计：
-      <i>45</i>元
+      <i>{{count.sumPrice}}</i>元
     </strong>
-    <button class="playP">下单</button>
+    <button class="playP" v-text="fla?'下单':'删除'" @click="handerDelete"></button>
   </div>
 </template>
 
 <script>
-export default {};
+import {mapState,mapMutations,mapGetters} from 'vuex'
+
+export default {
+  name:'carfooter',
+  computed: {
+     ...mapState({
+        selected:state=>state.car.selecetedAll,
+         dataList:state=>state.car.goodsList,
+         fla:state=>state.car.deleSle
+
+     }),
+     ...mapGetters({
+       count:"car/goodsInfor"
+     })
+  },
+  methods: {
+    ...mapMutations({
+      handlerToggle:"car/handlerToggle",
+      handerDelete:"car/handerDelete"
+    })
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .m-cartFt{
     width: 100%;
     height: .96rem;
-    background: #fff;
+    background: rgb(204, 193, 193);
     position: fixed;
     left: 0;
     bottom: .98rem;
@@ -36,7 +57,7 @@ export default {};
     color: #b4282d;
     font-size: .3rem;
     margin-left: .4rem;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 .playP{
     position: absolute;

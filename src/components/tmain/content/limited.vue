@@ -1,6 +1,6 @@
 <template>
   <div class="time_by">
-      <CommHead :val="title"/>
+      <CommHead :val="title" :fla="true"/>
       <ul>
           <li v-for="(item,index) in axoisData" :key="index">
                 <router-link to="/timeB" tag='a'>

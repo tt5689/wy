@@ -1,41 +1,38 @@
 <template>
     <ul class="cartGroupList">
-            <li class="gItem">
-                <!-- <i class="checkOut"></i> -->
-                <input type="checkbox" />
-                <img />
+            <li class="gItem" v-for="(item,index) in dataList" :key="index" @change="handerChangeToggle(index)">
+                <input type="checkbox" :checked="item.flag"/>
+                <img :src="item.showPicUrl"/>
                 <div class="goodInfor">
-                    <p>dasdsdewe</p>
-                    <span>商品信息</span>
-                    <strong>dfsf</strong>
+                    <p>{{item.name}}</p>
+                    <span>{{item.simpleDesc}}</span>
+                    <strong>￥{{item.retailPrice}}</strong>
                 </div>
                 <div class="m-selnum">
-                    <button>-</button>
-                    <input type="text" />
-                    <button>+</button>
-                </div>
-            </li>
-            <li class="gItem">
-                <!-- <i class="checkOut"></i> -->
-                <input type="checkbox" />
-                <img />
-                <div class="goodInfor">
-                    <p>dasdsdewe</p>
-                    <span>商品信息</span>
-                    <strong>dfsf</strong>
-                </div>
-                <div class="m-selnum">
-                    <button>-</button>
-                    <input type="text" />
-                    <button>+</button>
+                    <button @click="handlerReduce(index)">-</button>
+                    <input type="text" :value="item.num" @input="handlerInput({index,e:$event})"/>
+                    <button @click="handlerAdd(index)">+</button>
                 </div>
             </li>
         </ul>
 </template>
 
 <script>
+import {mapState,mapMutations} from 'vuex'
 export default {
-    
+    computed: {
+        ...mapState({
+            dataList:state=>state.car.goodsList
+        })
+    },
+    methods: {
+        ...mapMutations({
+            handerChangeToggle:"car/handerChangeToggle",
+            handlerReduce:"car/handlerReduce",
+            handlerAdd:"car/handlerAdd",
+            handlerInput:"car/handlerInput"
+        })
+    },
 }
 </script>
 
@@ -106,5 +103,6 @@ export default {
     height: .54rem;
     border: 1px solid #888;
     box-sizing: border-box;
+    text-align: center;
 }
 </style>
