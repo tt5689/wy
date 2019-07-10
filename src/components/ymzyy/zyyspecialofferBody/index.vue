@@ -69,7 +69,7 @@
               <span>{{item.titles}}</span>
               <i>进入榜单&gt;</i>
             </div>
-            <img :src="item.imgss"/>
+            <img :src="item.imgss" class="thmoreListRight"/>
           </li>
         </ul>
       </div>
@@ -92,7 +92,7 @@ export default {
     data() {
         return {
             zyyspecialofferList:[],
-            navList:["全部","居家生活","服饰鞋包","美食酒水","个护清洁","母婴亲子","运动旅行"], 
+            navList:["全部","居家生活","服饰鞋包"], 
             flage:'ture',
             rxnavIndex:0,
             moretwo:[
@@ -431,11 +431,19 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 1.5rem;
+    }
+    .thmoreListLeft span {
+        width:  1.5rem;
+        height: .4rem;
+        font-size: .18rem;
     }
     .thmoreListLeft i {
         font-size: .16rem;
+        width:  1.5rem;
+        height: .4rem;
     }
-    .thmoreListLeft li img {
+    .thmoreListRight {
         width: 1.3rem;
         height: 1.3rem;
     }
