@@ -6,8 +6,8 @@
             <Welfare />
             <CanNav/>
             <TicketCenter/>
-            <Lowerprice v-for="(item,index) in abPriceList" :key="index" :aPList="item"/>
-            <ComposeWrap v-for="(itm,idx) in valueList" :key="idx" :vBList="itm"/>
+            <Lowerprice v-for="(item) in abPriceList" :key="item.id" :aPList="item"/>
+            <ComposeWrap v-for="(itm) in valueList" :key="itm.id" :vBList="itm"/>
             <Amazing/>
         </div>
     </div>

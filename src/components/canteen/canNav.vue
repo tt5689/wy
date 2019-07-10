@@ -102,7 +102,7 @@ export default {
   beforeDestroy() {
     // 移除绑定事件
     window.removeEventListener("scroll", this.handlerScroll);
-  },
+  }
 };
 </script>
 

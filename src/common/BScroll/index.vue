@@ -52,7 +52,6 @@ export default {
         }
     },
     mounted(){
-        console.log('1111');
         this.scroll = new BScroll(this.$refs.scroll, {
             click: true,
             startY: this.forword ? -50 : 0,

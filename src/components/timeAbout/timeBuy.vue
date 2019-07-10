@@ -30,6 +30,7 @@
 
 <script>
 import { getTime } from "api/timeBuy";
+import BScorll from 'common/BScroll'
 export default {
     data() {
         return {

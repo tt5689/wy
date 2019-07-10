@@ -2,9 +2,9 @@
 <div>
     <THeader/>
     <div class="m-flashSale">
-        <TimeNav/>
-        <TimeBuy/>
-        <Floors/>
+            <TimeNav/>
+            <TimeBuy/>
+            <Floors/>
         <div class="seeMore">查看更多</div>
     </div>
 </div>
@@ -14,14 +14,18 @@
 import THeader from 'common/zyyheader/zyyTop.vue'
 import TimeNav from 'components/timeAbout/timeNav.vue';
 import TimeBuy from 'components/timeAbout/timeBuy.vue';
-import Floors from 'components/timeAbout/goodFloor.vue'
+import Floors from 'components/timeAbout/goodFloor.vue';
+
 export default {
     components:{
         THeader,
         TimeNav,
         TimeBuy,
         Floors
-    }
+    },
+    created() {
+        console.log(this.$refs.bscroll);
+    },
 }
 </script>
 
