@@ -69,7 +69,7 @@
               <span>{{item.titles}}</span>
               <i>进入榜单&gt;</i>
             </div>
-            <img :src="item.imgss"/>
+            <img :src="item.imgss" class="moreListRight"/>
           </li>
         </ul>
       </div>
@@ -428,16 +428,24 @@ export default {
             margin: .1rem;
         }
         .moreListLeft {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 1.5rem;
+        }
+        .moreListLeft span {
+            width:  1.5rem;
+            height: .4rem;
+            font-size: .18rem;
         }
         .moreListLeft i {
             font-size: .16rem;
+            width:  1.5rem;
+            height: .4rem;
         }
-        .moreList li img {
+        .moreListRight {
             width: 1.3rem;
             height: 1.3rem;
         }
-    
+        
 </style>

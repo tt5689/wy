@@ -32,15 +32,14 @@
                 <div class="buyingVipMoon">先试用30天</div>
             </div>
         </div>
-        <div class="img_one">
-            <div class="img_oneL" v-for="(item,index) in zyyOpenGiftInfos" :key="index">
-                <img :src="item.picUrl">
-                <!-- <img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"> -->
+            <div class="zyyvipscoll">
+                <ul class="scollVip">
+                    <li class="scollViplist" v-for="(item,index) in zyyOpenGiftInfos" :key="index">
+                        <img :src="item.picUrl">
+                    </li>
+                </ul>
             </div>
-            <!-- <div class="img_oneR">
-                <img src="https://yanxuan.nosdn.127.net/a81dd3d443be10cd7d49bdb933869d0d.png?imageView&quality=65&thumbnail=690x120">
-            </div> -->
-        </div>
+            
         <div class="img_two">
             <img src="https://yanxuan.nosdn.127.net/16602a11b02f925b8b47edf8d9e1b133.png?imageView&quality=65&thumbnail=690x160">
         </div>
@@ -169,7 +168,7 @@ export default {
         this.zyySixclass = this.zyyPrivilegeModuleMap[106];
         this.zyyFourclass = this.zyyPrivilegeModuleMap[104];
         this.zyyNavlist = this.zyysupervipList.memInfo.privilegeList;
-        console.log(this.zyyNavlist);
+        // console.log(this.zyyNavlist);
         
               
     },
@@ -187,7 +186,8 @@ export default {
             zyyOneclass:[],
             zyyFourclass:[]
         }
-    },
+    }
+
 }
 </script>
 
@@ -337,37 +337,33 @@ export default {
         font-weight: 900;
         color: #4d3a12;
     }
-    .img_one {
-        width: 100%;
-        height: 1.1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        overflow-x: auto;
-        overflow-y: hidden;
-        margin-top: .5rem;
-    }
     ::-webkit-scrollbar {display:none} 
-    .img_oneL {
+    .zyyvipscoll {
         width: 100%;
-        height: 100%; 
-        margin: 0 .2rem;
-        padding-right: .3rem; 
+        height: 1.5rem;
+        margin-top: .2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    /* .img_oneR {
-        margin-left: .5rem;
-        padding-right: .35rem;
-        width: 100%;
-        height: 100%;   
-    } */
-    .img_oneL img {
-        width: 6.9rem;
-        height: 100%;   
-    }
-    /* .img_oneR img {
+    .scollVip {
         width: 6.9rem;
         height: 100%;
-    } */
+        display: flex;
+        overflow-x: auto;
+    }
+    .scollViplist {
+        /* margin-top: .2rem; */
+        width: 6.9rem;
+        height: 1.5rem;
+    }
+    .scollViplist :nth-child(2) {
+        margin-left: .2rem
+    }
+    .scollViplist img {
+        width: 6.9rem;
+        height: 100%;
+    }
     .img_two {
         width: 6.9rem;
         height: 1.6rem;
@@ -516,7 +512,7 @@ export default {
     .svipPriceListLi_one em {
         width: 1.1rem;
         height: .28rem;
-        line-height: .28rem;
+        line-height: .27rem;
         font-size: .1rem;
         white-space: nowrap;
         color: #fff;
@@ -562,6 +558,7 @@ export default {
         position: relative;
     }
     .lastListS {
+        padding-right: .2rem;
         width: 6rem;
         height: 3rem;
         margin-left: .2rem;
