@@ -12,25 +12,29 @@
                 </header>
             </div>
             <nav class="main">
-                <a href="#">变身水杯49元</a>
-                <a href="#">遮阳帽 限时64元</a>
-                <a href="#">分类垃圾袋</a>
-                <a href="#">电动牙刷69元起</a>
-                <a href="#">女鞋</a>
-                <a href="#">直流风扇199元</a>
-                <a href="#">新品凉鞋169元起</a>
-                <a href="#">男士内裤</a>
-                <a href="#">床垫</a>
-                <a href="#">猫粮</a>
-                <a href="#">垃圾桶</a>
+                <a href="#" v-for="(item,index) in hotKeywordVOList" :key= "index">{{item.keyword}}</a>
             </nav>
         </div>
     </div>
 </template>
 <script>
+import {search} from "api/search/index.js";
 export default {
+    async created() {
+         let data = await search();
+        console.log(data);
+        this.hotKeywordVOList = data.data.hotKeywordVOList;
+    },
+    data(){
+        return{
+            hotKeywordVOList:[]
+
+        }
+
+    }
     
 }
+
 </script>
 
 
