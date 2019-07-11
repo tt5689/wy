@@ -3,7 +3,7 @@
 <a href="javascript:;">网易严选</a>
 <div>
     <i class="iconfont iconfangdajing"></i>
-    <input type="text" placeholder="搜索商品, 共22438款好物"/>
+    <router-link  type="text" placeholder="搜索商品, 共22438款好物" :to="'/search'" tag="input"/>
 </div>
 <router-link class="login-btn" :to="'/Mine'" tag="div">登陆</router-link>
 </div>

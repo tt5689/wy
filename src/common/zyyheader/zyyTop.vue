@@ -1,11 +1,10 @@
 <template>
         <div id="zyyTop">
-                <router-link :class="vipHome.ico" class ="iconfont viphome" :to="vipHome.path" tag="i"></router-link>
-                <h2 v-text="viptitle" class="zyywyxttitle"></h2>
-                <i :class="vipSearch" class ="iconfont vipsearch" ></i>
-                <i :class="vipCar" class ="iconfont vipcar" ></i>
+            <router-link :class="vipHome.ico" class ="iconfont viphome" :to="vipHome.path" tag="i"></router-link>
+            <h2 v-text="viptitle" class="zyywyxttitle"></h2>
+            <router-link :class="vipSearch" class ="iconfont vipsearch" :to="'/search'" tag="i" ></router-link>
+            <router-link  :class="vipCar" class ="iconfont vipcar" :to="'/shopingcar'" tag="i"></router-link >
         </div>
-
 </template>
 
 <script>
