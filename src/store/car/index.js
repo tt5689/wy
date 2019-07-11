@@ -24,6 +24,15 @@ import axios from "axios";
             item.num = 1;
         })
         state.goodsList = params;
+        var arr = localStorage.getItem('goodList');
+        //判断本地是否存在这个数据  用一个goodlist[{}]这种形式存储
+        if(arr){
+            arr.forEach(element => {
+                if(element.id == params.id){
+                    
+                }
+             });
+        }
     },
     handerChangeToggle(state,params){
         state.goodsList[params].flag = !state.goodsList[params].flag;
