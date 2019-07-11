@@ -50,3 +50,24 @@ export const categoryModule = ()=>{
         url:'http://localhost:3000/categoryModule'
     })
 } 
+// 列表
+export const ficationList= ()=>{
+    return axios({
+        method:'get',
+        url:'http://localhost:3000/ficationList'
+    })
+} 
+// 内容
+export const ficationNav= ()=>{
+    return axios({
+        method:'get',
+        url:'http://localhost:3000/ficationNav'
+    })
+} 
+// 图片
+export const recommend= ()=>{
+    return axios({
+        method:'get',
+        url:'http://localhost:3000/recommend'
+    })
+}

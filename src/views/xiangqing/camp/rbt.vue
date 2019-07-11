@@ -24,7 +24,7 @@
     </div>
     <div class="listItem">
         <span class="sl">规格数量</span>
-        <i class="iconfont icongengduo">1</i>
+        <i class="iconfont icongengduo"></i>
     </div>
     <div class="distribution">
         <div class="dist-left">配送：</div>
@@ -144,7 +144,7 @@ export default {
 }
 .span{
     height: 1rem;
-    color: red;
+    color: #B4282D;
     font-size: .6rem;
     line-height: 1rem;
     margin-left: 0.2rem;
@@ -152,9 +152,11 @@ export default {
 .min{
     width: 1.2rem;
     height: .4rem;
-    border: 1px solid red;
+    border: 1px solid #B4282D;
     font-size: 0.3rem;
     margin-left: 0.2rem;
+    border-radius: 0.1rem;
+    text-align: center;
 }
 .info{
     font-size: .42667rem;
@@ -169,25 +171,26 @@ export default {
     line-height: .6rem;
     color: #7f7f7f;
     margin-bottom: .4rem;
-    border-bottom: 0.3rem solid #ccc;
+    border-bottom: 1px solid #ccc;
     text-indent: 0.2rem;
 }
 .shoppingReward{
     height: 0.8rem;
     margin-bottom: 0.2rem;
-    border-bottom: 0.3rem solid #ccc;
+    border-bottom: 1px solid #ccc;
     text-indent: 0.2rem;
 
 }
 .lable{
     font-size: 0.3rem;
+     font-weight: 900;
 }
 .reactid{
     font-size: 0.3rem;
 }
 .points{
     font-size: 0.3rem;
-    color: red;
+    color: #B4282D;
 }
 .listItem{
 height: 0.8rem;
@@ -199,6 +202,7 @@ border-bottom: 1px solid #ccc;
 .sl{
     font-size: 0.3rem;
     float: left;
+     font-weight: 900;
 }
 .icongengduo{
     float: right;
@@ -216,10 +220,12 @@ font-size: 0.3rem;
 }
 .dist-left{
     float: left;
+    font-weight: 900;
 
 }
 .dist-right{
     float: left;
+    font-size: 0.25rem
 }
 .serve{
     height: 0.8rem;
@@ -232,9 +238,11 @@ font-size: 0.3rem;
 }
 .serve-left{
     float: left;
+     font-weight: 900;
 }
 .serve-right{
     float:left;
+    font-size: 0.25rem;
     }
 
       .footer{
@@ -270,7 +278,7 @@ font-size: 0.3rem;
 .footer-right{
     width: 2rem;
     height: 100%;
-    background: red;
+    background: #B4282D;
     border: 0;
     font-family: PingFangSC-Light,helvetica,'Heiti SC';
     }

@@ -12707,5 +12707,103 @@
             "limitNew": true,
             "desc": "0甲醛无胶水 适合60x120cm童床"
         }
-    ]
+    ],
+
+    
+    "recommend":[
+        {
+            "minimg":"https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+            "titem":"常年断货的严选爆品终于上架了，回头客都在抢！",
+            "maximg":"https://yanxuan.nosdn.127.net/6f5e7bb94350b7eed05134a9b1d83200.jpg",
+            "watch":"56w人看过"
+        },
+        {
+            "minimg":"https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+            "titem":"在严选，花九块九能买到什么？",
+            "maximg":"https://yanxuan.nosdn.127.net/e17bf71917038e4a31af6c0b863ec809.jpg",
+            "watch":"946w人看过"
+
+        },
+        {
+            "minimg":"https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+            "titem":"当季新鲜超大只小龙虾限时85折！还有螺蛳粉、无烟小烧烤等必吃热辣夜宵，快来尝尝吧！",
+            "maximg":"https://yanxuan.nosdn.127.net/a63e43e658437360d1588d9285353e4b.jpg",
+            "watch":"48.9k人看过"
+        },
+        {
+            "minimg":"https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+            "titem":"衣服不会脏、内裤天生抗菌、被子居然是凉的！天呐，严选的日用好物也太黑科技了吧！",
+            "maximg":"https://yanxuan.nosdn.127.net/f0fd126d67b48f40fc4180ff449ce593.jpg",
+            "watch":"78.5k人看过"
+        },
+        {
+            "minimg":"https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png",
+            "titem":"夏天的命都是这些神器给的！冷感被，薄荷贴、制冰机……每满149立减20！",
+            "maximg":"https://yanxuan.nosdn.127.net/2bf63616fab33f40024db6755d54d45b.jpg",
+            "watch":"17.9k人看过"
+        }
+
+    ],
+    "ficationList":[
+        "推荐专区",
+        "夏凉专区",
+        "爆品专区",
+        "新品专区",
+        "居家专区",
+        "服饰鞋包",
+        "美食酒水",
+        "个防清洁",
+        "母婴清洁",
+        "运动旅游",
+        "数码家电",
+        "全球特色"
+    ],
+    "ficationNav":[
+        {
+        "picUrl":"https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png",
+        "listName":"员工精选好货"
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/d924d795f2d667dc2381234137fa0684.png",
+        "listName":"优选美食第二件68折"
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/cd9c3106206c529ce1eaf68c68ddc80f.png",
+         "listName":"舒爽婴童好物特卖"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/eafc155abc6017e4248861eec4caeb05.png",
+         "listName":"居家好物3件7.5折"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/226661bad9b031e528fe7dac1d57bf38.png",
+         "listName":"9.9元超值好物"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/cbd8eb738aad23c11b4b575c786f485e.png",
+         "listName":"夏日运动好物3件7.5折"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/7051ddcfe73ef58217ab278c69b224b7.png",
+         "listName":"夏日女士穿搭3件7.5折"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/837040aea033f4f5d44be5ef760d0cac.png",
+         "listName":"夏日男士穿搭特卖"
+ 
+     },
+     {
+         "picUrl":"https://yanxuan.nosdn.127.net/60fd8b80c8a057af9255d2c1a31f82ce.png",
+         "listName":"999+好评"
+ 
+     }
+ ]
+
+
+    
 }
