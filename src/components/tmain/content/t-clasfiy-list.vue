@@ -6,10 +6,10 @@
             <li>48小时快速退款</li>
         </ul>
         <div class="t-list">
-            <a href="javascript:;" v-for="(item,index) in data" :key="index">
+            <router-link  href="javascript:;" v-for="(item,index) in data" :key="index" :to="index==9?'/zyysupervip':''" tag="a">
                 <img :src="item.picUrl"/>
                 <p>{{item.text}}</p>
-            </a>
+            </router-link>
         </div>
     </div>
 </template>
@@ -54,6 +54,10 @@ export default {
                 border-radius: .3rem;
             }
         }
+    }
+    .router-link-active {
+        background-color: #fff;
+        color: #333;
     }
 }
 </style>
