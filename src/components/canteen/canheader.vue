@@ -2,8 +2,8 @@
         <div class="svheader">
             <router-link to="/home" tag="i" class ="iconfont iconshouye" ></router-link>
             <h2 v-text="viptitle" class="zyywyxttitle"></h2>
-            <i  class ="iconfont iconfangdajing"></i>
-            <i  class ="iconfont iconcart" ></i>
+            <router-link  class ="iconfont iconfangdajing" :to="'/search'" tag="i"></router-link>
+            <router-link  class ="iconfont iconcart" :to="'/shopingcar'" tag="i"></router-link>
         </div>
 </template>
 

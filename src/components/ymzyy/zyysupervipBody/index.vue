@@ -38,7 +38,7 @@
                         <img :src="item.picUrl">
                     </li> -->
                     <div class="swiper-slide scollViplist"><img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"></div>
-                    <div class="swiper-slide scollViplist"><img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"></div>
+                    <div class="swiper-slide scollViplist"><img src="https://yanxuan.nosdn.127.net/a81dd3d443be10cd7d49bdb933869d0d.png?imageView&quality=65&thumbnail=690x120"></div>
                 </ul>
                  <div class="swiper-pagination vipPage"></div>
             </div>
@@ -199,10 +199,10 @@ export default {
                 clickable :true,
             },
         autoplay: {
-                disableOnInteraction: true,
+                disableOnInteraction: false,
             },
         })
-    },
+    }
 
 }
 </script>
@@ -219,6 +219,7 @@ export default {
         background-color: #fff;
         min-height:8rem;
         overflow-y: hidden;
+        overflow-x: hidden;
     }
     .svBgimg {
         width: 100%;
@@ -358,16 +359,11 @@ export default {
         width: 100%;
         height: 1.8rem;
         margin-top: .2rem;
-        margin-left: .22rem;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
+        margin-left: .26rem;
     }
     .scollVip {
         width: 6.9rem;
         height: 100%;
-        /* display: flex;
-        overflow-x: auto; */
     }
     .scollViplist {
         width: 6.9rem;
