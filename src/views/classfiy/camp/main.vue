@@ -4,48 +4,34 @@
         <img class="img01" src="https://yanxuan.nosdn.127.net/e5d222456b15bd11e438526dcca5fba4.jpg?imageView&thumbnail=0x196&quality=75" alt="">
     </div>
     <div class="contion">
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
+        <figure v-for="(item,index) in hotKeywordNav" :key= "index">
+            <img :src="item.picUrl"  class="img02">
+            <figcaption>{{item.listName}}</figcaption>  
         </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-       <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
-        <figure>
-            <img class="img02" src="https://yanxuan.nosdn.127.net/56486ce98e6ba7ae59a617759e739b09.png?imageView&quality=85&thumbnail=144x144" alt="">
-            <figcaption>会员中心</figcaption>  
-        </figure>
+
+
+
     </div>
 </div>
     
 </template>
 <script>
+import {ficationNav} from "api/home/thome.js";
 export default {
+     async created() {
+         let data = await ficationNav();
+         console.log(data);
+         this.hotKeywordNav = data.data;
+         console.log( this.hotKeywordNav);
+
+    },
+      data(){
+        return{
+            hotKeywordNav:[]
+
+        }
+
+    }
     
 }
 </script>
@@ -88,7 +74,7 @@ export default {
         width: 1.44rem;
         height: 0.72rem;
         text-align: center;
-        line-height: 0.72rem;
+        font-size: 0.26rem;
     }
 
 </style>

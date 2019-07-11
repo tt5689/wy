@@ -37,10 +37,17 @@
             </div>
             <div class="pic">
                 <img src="https://yanxuan.nosdn.127.net/14dd5e608534edfa1e759234420b0d92.jpg?quality=85&thumbnail=750x450&imageView" alt="" class="img03">
-
             </div>
         </li>
     </ul>
+    <div class="article">
+       <div class="articl">杯子不美，怎么好好喝水？</div>
+       <div class="conter">夏天到了，作为一个杯子控，当然也要拿出最时髦的杯子喝水。</div>
+       <div class="botter">它还专门设计了可替换的瓶盖，在办公室插着吸管喝
+             ，出门就换上硅胶提手。有多种颜色选择，
+             搭配身上穿的衣服，就像带了一款时尚单品。
+        </div>
+    </div>
 
 </div>
     
@@ -120,8 +127,7 @@ h3{
     border-bottom: 1px solid #f4f4f4;
     }
 .g-list li{
-    padding: .52rem 0 1rem;
-    margin: 0 .3rem;
+    padding: .52rem 0 .1rem;
     position: relative;
 }
 .avas{
@@ -135,11 +141,12 @@ h3{
      width: .64rem;
     height: .64rem;
      border-radius: 50%;
+     margin-left: 0.2rem;
 
 }
 .fo{
     float: left;
-    margin: 0.6rem 0 0 .2rem;
+    margin: 0.6rem 0.5rem 0 .2rem;
 }
 .t{
     font-size: .28rem;
@@ -161,5 +168,19 @@ h3{
     width: 7.5rem;
     height: 4.5rem;
     margin-right: 0.1rem;
+}
+.article{
+    font-size: .36rem;
+    color: #333;
+    text-align: left;
+    line-height: .52rem;
+    font-weight: 700;
+    margin-left: 0.2rem;
+}
+.conter{
+    font-size: 0.28rem;
+}
+.botter{
+    font-size: 0.28rem;
 }
 </style>

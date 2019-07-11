@@ -1,7 +1,7 @@
 <template>
    <div class="box">
     <div class="top">
-        <div class="top-left">
+        <div class="top-left" >
             <i class="iconfont iconyemian"></i>
         </div>
         <div class="top-cetion">

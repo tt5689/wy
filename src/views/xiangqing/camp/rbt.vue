@@ -24,9 +24,9 @@
       </div>
       <div class="listItem">
         <span class="sl">规格数量</span>
-        <i class="iconfont icongengduo">1</i>
-      </div>
-      <div class="distribution">
+        <i class="iconfont icongengduo"></i>
+    </div>
+    <div class="distribution">
         <div class="dist-left">配送：</div>
         <div class="dist-right">请选择配送地址</div>
       </div>
@@ -137,19 +137,21 @@ export default {
 .detailBaseInfo {
   width: 100%;
 }
-.span {
-  height: 1rem;
-  color: red;
-  font-size: 0.6rem;
-  line-height: 1rem;
-  margin-left: 0.2rem;
+.span{
+    height: 1rem;
+    color: #B4282D;
+    font-size: .6rem;
+    line-height: 1rem;
+    margin-left: 0.2rem;
 }
-.min {
-  width: 1.2rem;
-  height: 0.4rem;
-  border: 1px solid red;
-  font-size: 0.3rem;
-  margin-left: 0.2rem;
+.min{
+    width: 1.2rem;
+    height: .4rem;
+    border: 1px solid #B4282D;
+    font-size: 0.3rem;
+    margin-left: 0.2rem;
+    border-radius: 0.1rem;
+    text-align: center;
 }
 .info {
   font-size: 0.42667rem;
@@ -190,9 +192,10 @@ export default {
   line-height: 0.8rem;
   border-bottom: 1px solid #ccc;
 }
-.sl {
-  font-size: 0.3rem;
-  float: left;
+.sl{
+    font-size: 0.3rem;
+    float: left;
+     font-weight: 900;
 }
 .icongengduo {
   float: right;
@@ -207,11 +210,14 @@ export default {
   border-bottom: 1px solid #ccc;
   font-size: 0.3rem;
 }
-.dist-left {
-  float: left;
+.dist-left{
+    float: left;
+    font-weight: 900;
+
 }
-.dist-right {
-  float: left;
+.dist-right{
+    float: left;
+    font-size: 0.25rem
 }
 .serve {
   height: 0.8rem;
@@ -221,12 +227,14 @@ export default {
   border-bottom: 1px solid #ccc;
   font-size: 0.3rem;
 }
-.serve-left {
-  float: left;
+.serve-left{
+    float: left;
+     font-weight: 900;
 }
-.serve-right {
-  float: left;
-}
+.serve-right{
+    float:left;
+    font-size: 0.25rem;
+    }
 
 .footer {
   position: fixed;
@@ -265,5 +273,12 @@ export default {
   border: 0;
   font-family: PingFangSC-Light, helvetica, "Heiti SC";
 }
+.footer-right{
+    width: 2rem;
+    height: 100%;
+    background: #B4282D;
+    border: 0;
+    font-family: PingFangSC-Light,helvetica,'Heiti SC';
+    }
 </style>
 
