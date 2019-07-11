@@ -25,6 +25,9 @@ export default {
             dataList:state=>state.car.goodsList
         })
     },
+    updated() {
+        console.log(this.dataList);
+    },
     methods: {
         ...mapMutations({
             handerChangeToggle:"car/handerChangeToggle",
