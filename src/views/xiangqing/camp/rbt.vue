@@ -12,10 +12,10 @@
 
   <div class="detailBaseInfo">
     <div class="img-bottm">
-        <div class="span">￥998</div>
+        <div class="span">{{val.retailPrice}}</div>
         <div class="min">新品 ></div>
-        <div class="info">自动喷香机</div>
-        <div class="dese">定时自动喷香，时刻芬芳环绕</div>
+        <div class="info">{{val.name}}</div>
+        <div class="dese">{{val.simpleDesc}}</div>
     </div>
     <div class="shoppingReward">
         <span class="lable">购物返:</span>
@@ -23,8 +23,8 @@
         <span class="points">¥1回馈金 + 9积分</span>
     </div>
     <div class="listItem">
-        <span class="sl">请选择规格数量</span>
-        <i class="iconfont icongengduo"></i>
+        <span class="sl">规格数量</span>
+        <i class="iconfont icongengduo">1</i>
     </div>
     <div class="distribution">
         <div class="dist-left">配送：</div>
@@ -35,6 +35,11 @@
         <div class="serve-right">支持30天无忧退换货,满88元免邮费</div>
     </div>
 </div>
+<div class="footer">
+    <button class="footer-left">联系我们</button>
+    <button class="footer-center">立即购买</button>
+    <v-touch tag="button" class="footer-right" @tap="handlerClick">加入购物车</v-touch>
+</div>
   </div>
 </template>
 <script>
@@ -43,14 +48,41 @@ import Swiper from "swiper";
 import axios from "axios";
 export default {
   name: "banner",
-
+  props:['val'],
+  created() {
+    console.log(this.val);
+  },
+  methods: {
+    handlerClick(){
+      if(this.val){
+      var id = this.val.id;
+      var localArr = JSON.parse(localStorage.getItem('idArr'));
+      if(localArr){
+        var flag = true;
+          localArr.forEach((element,index) => {
+              if(element.id == id){
+                flag = false;
+              }
+          });
+          if(flag){
+            localArr.push(this.val.id);
+          }
+      }else{
+        localArr = [];
+        localArr.push(this.val.id);
+      }
+      localStorage.setItem('idArr',JSON.stringify(localArr));
+      }
+    }
+  },
   data() {
     return {
       banners: [
-        "https://yanxuan.nosdn.127.net/fcd5f25415cda937dbc5244037d4ba93.jpg",
-         "https://yanxuan.nosdn.127.net/fcd5f25415cda937dbc5244037d4ba93.jpg",
-          "https://yanxuan.nosdn.127.net/fcd5f25415cda937dbc5244037d4ba93.jpg",
-           "https://yanxuan.nosdn.127.net/fcd5f25415cda937dbc5244037d4ba93.jpg",
+        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
+        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
+        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
+        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
+        
       ]
     };
   },
@@ -203,6 +235,44 @@ font-size: 0.3rem;
 }
 .serve-right{
     float:left;
+    }
+
+      .footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1rem;
+    border-top: 1px solid #ccc;
+}
+.footer-left{
+    height: 100%;
+    width: 2.08rem;
+    border:0;
+    float: left;
+    background: #fff;
+     font-family: PingFangSC-Light,helvetica,'Heiti SC';
+    font-weight: 900;
+    font-size: 0.34rem;
+}
+.footer-center{
+    width: 3.36rem;
+    height: 100%;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    float: left;
+    font-family: PingFangSC-Light,helvetica,'Heiti SC';
+    font-weight: 900;
+    background: #fff;
+}
+.footer-right{
+    width: 2rem;
+    height: 100%;
+    background: red;
+    border: 0;
+    font-family: PingFangSC-Light,helvetica,'Heiti SC';
     }
 </style>
 

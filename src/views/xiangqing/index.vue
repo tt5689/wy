@@ -2,22 +2,21 @@
 <div class="details">
 
     <Top/>
-    <Rbt/>
+    <Rbt :val="item"/>
     <!-- <Main/> -->
-    <Footer/>
 
 </div>
 </template>
 <script>
 import Top from "./camp/top"
-import Footer from "./camp/footer"
 import Rbt  from "./camp/rbt"
 // import Main from "./camp/main"
 export default {
+    name:"xiangqing",
+    props:["item"],
     components:{
        Top,
        Rbt,
-      Footer,
         
     
 }

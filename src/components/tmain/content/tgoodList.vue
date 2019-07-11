@@ -1,12 +1,12 @@
 <template>
     <ul>
-        <li  v-for="(item,index) in receriveDataList" :key="index">
-            <router-link to="xiangqing" tag="a">
+        <v-touch tag="li" v-for="(item,index) in receriveDataList" :key="index" @tap="handleDetail(item)" >
+            <a href="#">
                 <img :src='item.showPicUrl'/>
                 <p>{{item.name}}<i>{{item.retailPrice}}</i></p>
                 <span v-for="(item1,index) in item.itemTagList" :key="index">{{item1.name}}</span>
-            </router-link>
-        </li>
+            </a>
+        </v-touch>
     </ul>
 </template>
 
@@ -23,6 +23,11 @@ export default {
     data() {
         return {
             receriveDataList:[]
+        }
+    },
+    methods: {
+        handleDetail(item){
+            this.$router.push({name:"xiangqing",params:{item:item}})
         }
     },
 }

@@ -39,7 +39,7 @@ export default {
             this.topI = obj;
             i++;
         }else{
-            this.data.push(obj);
+            this.data.push(element);
         }
       });
     },
