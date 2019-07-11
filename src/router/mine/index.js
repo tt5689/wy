@@ -3,6 +3,6 @@ export default{
     component:()=>import('views/mine'),
     name:'mine',
     meta:{
-        zyydisplaynoneboyyom:true,
+        zyydisplaynoneboyyom:false,
     }
 }

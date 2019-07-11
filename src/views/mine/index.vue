@@ -1,15 +1,19 @@
 <template>
-    <h1>{{name}}-->{{id}}</h1>
+    <div id="mine">
+        <ZyyTop/>
+        <MineBody/>
+
+    </div>
 </template>
 <script>
+import ZyyTop from 'common/zyyheader/zyyTop'
+import MineBody from 'components/ymzyy/mineBody'
 export default {
     name:'mine',
-    data() {
-        return {
-            id:'',
-            name:''
-        }
-    },
+    components: {
+        ZyyTop,
+        MineBody
+    }
 }
 </script>
 <style>

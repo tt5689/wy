@@ -32,12 +32,15 @@
                 <div class="buyingVipMoon">先试用30天</div>
             </div>
         </div>
-            <div class="zyyvipscoll">
-                <ul class="scollVip">
-                    <li class="scollViplist" v-for="(item,index) in zyyOpenGiftInfos" :key="index">
+            <div class="zyyvipscoll swiper-container" ref="vipsss">
+                <ul class="scollVip swiper-wrapper">
+                    <!-- <li class="scollViplist swiper-slide" v-for="(item,index) in zyyOpenGiftInfos" :key="index">
                         <img :src="item.picUrl">
-                    </li>
+                    </li> -->
+                    <div class="swiper-slide scollViplist"><img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"></div>
+                    <div class="swiper-slide scollViplist"><img src="https://yanxuan.nosdn.127.net/227dd09c76ed411a95f9d948c6c4320a.png?imageView&quality=65&thumbnail=690x120"></div>
                 </ul>
+                 <div class="swiper-pagination vipPage"></div>
             </div>
             
         <div class="img_two">
@@ -151,6 +154,8 @@
 
 <script>
 import {gteZyysuper} from "api/zyysupervip"
+import "swiper/dist/css/swiper.css";
+import Swiper from "swiper";
 export default {
     name:"ZyysupervipBody",
     // await要在anync里用，anync代表异步,代表当前函数是异步函数
@@ -169,8 +174,6 @@ export default {
         this.zyyFourclass = this.zyyPrivilegeModuleMap[104];
         this.zyyNavlist = this.zyysupervipList.memInfo.privilegeList;
         // console.log(this.zyyNavlist);
-        
-              
     },
     data() {
         return {
@@ -186,7 +189,20 @@ export default {
             zyyOneclass:[],
             zyyFourclass:[]
         }
-    }
+    },
+     mounted(){
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true,//可选选项，自动滑动
+            loop : true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable :true,
+            },
+        autoplay: {
+                disableOnInteraction: true,
+            },
+        })
+    },
 
 }
 </script>
@@ -340,22 +356,22 @@ export default {
     ::-webkit-scrollbar {display:none} 
     .zyyvipscoll {
         width: 100%;
-        height: 1.5rem;
+        height: 1.8rem;
         margin-top: .2rem;
-        display: flex;
+        margin-left: .22rem;
+        /* display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
     .scollVip {
         width: 6.9rem;
         height: 100%;
-        display: flex;
-        overflow-x: auto;
+        /* display: flex;
+        overflow-x: auto; */
     }
     .scollViplist {
-        /* margin-top: .2rem; */
         width: 6.9rem;
-        height: 1.5rem;
+        height: 1.4rem;
     }
     .scollViplist :nth-child(2) {
         margin-left: .2rem
@@ -364,10 +380,15 @@ export default {
         width: 6.9rem;
         height: 100%;
     }
+    .vipPage {
+        position: absolute;
+        top: 1.5rem;
+        left: 45%;
+    }
     .img_two {
         width: 6.9rem;
         height: 1.6rem;
-        margin: .5rem 0;
+        margin: .2rem 0;
     }
     .img_two img {
         width: 100%;

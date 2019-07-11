@@ -5,7 +5,7 @@
     <i class="iconfont iconfangdajing"></i>
     <input type="text" placeholder="搜索商品, 共22438款好物"/>
 </div>
-<div class="login-btn">登陆</div>
+<router-link class="login-btn" :to="'/Mine'" tag="div">登陆</router-link>
 </div>
 </template>
 
