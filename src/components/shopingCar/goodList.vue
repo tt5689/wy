@@ -1,4 +1,6 @@
 <template>
+<BScroll ref="bscroll">
+    <template>
     <ul class="cartGroupList">
             <li class="gItem" v-for="(item,index) in dataList" :key="index" @change="handerChangeToggle(index)">
                 <input type="checkbox" :checked="item.flag"/>
@@ -15,6 +17,8 @@
                 </div>
             </li>
         </ul>
+            </template>
+</BScroll>
 </template>
 
 <script>
@@ -24,9 +28,6 @@ export default {
         ...mapState({
             dataList:state=>state.car.goodsList
         })
-    },
-    updated() {
-        console.log(this.dataList);
     },
     methods: {
         ...mapMutations({
@@ -41,6 +42,9 @@ export default {
 
 
 <style>
+.cartGroupList{
+    min-height: 18rem;
+}
 .gItem{
     height: 2.2rem;
     margin-bottom: .2rem;
