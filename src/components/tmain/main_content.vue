@@ -1,5 +1,9 @@
 <template>
+ <BScroll ref="bscroll">
+    <template>
+        
     <div class="main_wrap">
+        <i class="fa fa-spinner fa-spin loading" v-if="scrollLoading"></i>
         <Banner>
             <template v-slot:banner="props">
                 <div class="swiper-wrapper">
@@ -21,6 +25,8 @@
         <CategoryModule v-for="(item,index) in axdata" :key="index" :mainTocaList="item"/>
         <FooterSelect/>
     </div>
+    </template>
+</BScroll>
 </template>
 
 <script>
@@ -57,13 +63,28 @@ export default {
     },
     data(){
        return{
-           axdata:[]
+           axdata:[],
+           scrollLoading:false
        }  
-    }
+    },
+    mounted(){
+      this.$refs.bscroll.handleScrollStart(()=>{
+        this.scrollLoading = true;
+      })
+
+      this.$refs.bscroll.handleScrollEnd(()=>{
+        this.scrollLoading = false;
+      })
+  }
 }
 </script>
 
 <style scoped>
+.loading{
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
 .main_wrap{
     width: 100%;
     flex: 1;

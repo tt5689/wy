@@ -1,5 +1,6 @@
 <template>
 <div class="shopCar">
+
 <CarHeader/>
 <CarList/>
 <CarFloor/>
@@ -31,6 +32,7 @@ export default {
 <style scoped>
 .shopCar{
     padding-bottom: 1.98rem;
+    height: 100%;
 }
 </style>
 

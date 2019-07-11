@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#wrap{
+  height: 100%;
+}
 #header_wrap {
   width: 100%;
   height: 1.48rem;
