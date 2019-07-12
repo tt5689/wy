@@ -21,12 +21,14 @@
 </div>
 </template>
 <script>
-import {recommend} from "api/home/thome.js"
+// import {recommend} from "api/home/thome.js"
+import Json from 'api/json/home.js'
 export default {
       async created() {
-        let data = await recommend();
+        // let data = await recommend();
+        let data = Json.recommend;
         console.log(data);
-         this.hotKeywordLi = data.data;
+         this.hotKeywordLi = data;
     },
      data(){
         return{

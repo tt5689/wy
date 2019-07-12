@@ -3,7 +3,7 @@
         <div class="top">
             <i class="iconfont iconfangdajing"></i>
             <input type="text" class="txt" placeholder="水感多效防晒凝露 SPF30">
-            <span class="cancel">取消</span>
+            <router-link to="classfiy" tag="span" class="cancel">取消</router-link>
         </div>
         <div class="nav">
             <div class="nav-n">

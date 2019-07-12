@@ -7,17 +7,20 @@
 import "swiper/dist/css/swiper.css";
 import Swiper from "swiper";
 import axios from "axios";
-import {getcanteen} from "api/canteen";
+// import {getcanteen} from "api/canteen";
+import Json from 'api/json/home.js'
 export default {
   name: "banner",
 
   async created() {
-    let dat = await axios({
-      method: "get",
-      url: "http://localhost:3000/focusList"
-    });
-    for (var i = 0; i < dat.data.length; i++) {
-      this.banners.push(dat.data[i].picUrl);
+    // let dat = await axios({
+    //   method: "get",
+    //   url: "http://localhost:3000/focusList"
+    // });
+    let dat = Json.focusList;
+    console.log(dat);
+    for (var i = 0; i < dat.length; i++) {
+      this.banners.push(dat[i].picUrl);
     }
   },
   data() {

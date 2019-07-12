@@ -13,14 +13,16 @@
 
 <script>
 import CommHead from './commHead.vue'
-import {tagList} from 'api/home/thome.js'
+// import {tagList} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
     components:{
         CommHead
     },
     async mounted() {
-         let data = await tagList();
-         data.data.map((item)=>{
+        //  let data = await tagList();
+        let data = Json.tagList;
+         data.map((item)=>{
             var obj = {}
             obj.name = item.name;
             obj.picUrl= item.picUrl;

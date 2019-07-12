@@ -1,18 +1,21 @@
-import axios from "axios";
+// import axios from "axios";
+import Json from 'api/json/home.js'
 const actions ={
    async getActionhomeNav({commit}){
-        let dat = await axios({
-            method: "get",
-            url: "http://localhost:3000/homenav"
-          });
-          commit("getMutationhomeNav",dat.data);
+        // let dat = await axios({
+        //     method: "get",
+        //     url: "http://localhost:3000/homenav"
+        //   });
+        let dat = Json.homenav;
+          commit("getMutationhomeNav",dat);
     },
     async getClassList({commit}){
-        let imglis = await axios({
-            method:'get',
-            url:' http://localhost:3000/kingKongModule'
-        });
-        commit('getMutationimgList',imglis.data);
+        // let imglis = await axios({
+        //     method:'get',
+        //     url:' http://localhost:3000/kingKongModule'
+        // });
+        let imglis = Json.kingKongModule;
+        commit('getMutationimgList',imglis);
     },
 }
 const mutations = {

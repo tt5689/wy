@@ -14,14 +14,16 @@
 
 <script>
 import CommHead from './commHead.vue';
-import {flashSaleModule} from 'api/home/thome.js'
+// import {flashSaleModule} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
   components: {
     CommHead
   },
   async created() {
-   let data = await  flashSaleModule();
-   data.data.itemList.forEach(element => {
+  //  let data = await  flashSaleModule();
+  let data = Json.flashSaleModule;
+   data.itemList.forEach(element => {
      var obj = {};
      obj.activityPrice = element.activityPrice;
      obj.originPrice = element.originPrice;

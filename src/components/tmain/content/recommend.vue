@@ -19,16 +19,18 @@
 <script>
 import CommHead from './commHead.vue'
 import TGoodList from './tgoodList.vue'
-import {popularItemList} from 'api/home/thome.js'
+// import {popularItemList} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
      components:{
         CommHead,
         TGoodList
     },
     async mounted() {
-      let d =  await popularItemList();
+    //   let d =  await popularItemList();
+       let d = Json.popularItemList;
       var i =1;
-      d.data.forEach(element => {
+      d.forEach(element => {
          var obj = {};
         obj.itemTagList= element.itemTagList;
         obj.name = element.name;

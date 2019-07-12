@@ -8,7 +8,8 @@
 <script>
 import CommHead from './commHead.vue'
 import TGoodList from './tgoodList.vue'
-import {newItemList} from 'api/home/thome.js'
+// import {newItemList} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
      components:{
         CommHead,
@@ -21,8 +22,9 @@ export default {
         }
     },
     async mounted() {
-        let dt = await newItemList();
-        dt.data.forEach(element => {
+        // let dt = await newItemList();
+        let dt = Json.newItemList;
+        dt.forEach(element => {
             var obj = {};
             obj.itemTagList= element.itemTagList;
             obj.name = element.name;

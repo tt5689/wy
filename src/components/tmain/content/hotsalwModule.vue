@@ -13,11 +13,13 @@
 </template>
 
 <script>
-import {categoryHotSellModule} from 'api/home/thome.js'
+// import {categoryHotSellModule} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
     async mounted() {
-        let d =  await  categoryHotSellModule();
-        this.classList = d.data;
+        // let d =  await  categoryHotSellModule();
+        let d = Json.categoryHotSellModule;
+        this.classList = d;
     },
     data(){
         return {

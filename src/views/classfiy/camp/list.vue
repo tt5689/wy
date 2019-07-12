@@ -8,11 +8,13 @@
      
  </template>
  <script>
- import {ficationList} from "api/home/thome.js";
+//  import {ficationList} from "api/home/thome.js";
+import Json from 'api/json/home.js'
  export default {
       async created() {
-         let data = await ficationList();
-        this.hotKeywordVOList = data.data;
+        //  let data = await ficationList();
+        let data1 = Json.ficationList;
+        this.hotKeywordVOList = data1;
     },
     data(){
         return{

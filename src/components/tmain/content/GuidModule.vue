@@ -14,11 +14,13 @@
     </div>
 </template>
 <script>
-import {sceneLightShoppingGuideModule} from 'api/home/thome.js'
+// import {sceneLightShoppingGuideModule} from 'api/home/thome.js'
+import Json from 'api/json/home.js'
 export default {
     async mounted() {
-        let dt =  await sceneLightShoppingGuideModule();
-        dt.data.forEach(element => {
+        // let dt =  await sceneLightShoppingGuideModule();
+        let dt = Json.sceneLightShoppingGuideModule;
+        dt.forEach(element => {
             var obj = {};
             obj.title = element.styleItem.title;
             obj.desc = element.styleItem.desc;

@@ -16,13 +16,13 @@
     
 </template>
 <script>
-import {ficationNav} from "api/home/thome.js";
+// import {ficationNav} from "api/home/thome.js";
+import Json from 'api/json/home.js'
 export default {
      async created() {
-         let data = await ficationNav();
-         console.log(data);
-         this.hotKeywordNav = data.data;
-         console.log( this.hotKeywordNav);
+        //  let data = await ficationNav();
+        let data = Json.ficationNav;
+         this.hotKeywordNav = data;
 
     },
       data(){

@@ -29,7 +29,8 @@
 </template>
 
 <script>
-import {newPImg} from 'api/home/thome.js';
+// import {newPImg} from 'api/home/thome.js';
+import Json from 'api/json/home.js'
 export default {
     methods: {
         handlerClick(){
@@ -40,9 +41,10 @@ export default {
         }
     },
     async created() {
-        let data1 = await newPImg();
+        // let data1 = await newPImg();
+        var data1 = Json.indexActivityModule;
         var i =0;
-         for(var item of data1.data){
+         for(var item of data1){
             var obj = {};
             obj.activityPrice = item.activityPrice;
             obj.showPicUrl = item.showPicUrl;

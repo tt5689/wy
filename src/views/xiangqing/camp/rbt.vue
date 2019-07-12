@@ -13,7 +13,7 @@
     <div class="detailBaseInfo">
       <div class="img-bottm">
         <div class="span">{{val.retailPrice}}</div>
-        <div class="min">新品 ></div>
+        <div class="min">新品</div>
         <div class="info">{{val.name}}</div>
         <div class="dese">{{val.simpleDesc}}</div>
       </div>
@@ -52,6 +52,15 @@ export default {
   name: "banner",
   props: ["val"],
   created() {
+    let arr = [
+        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
+        "https://yanxuan.nosdn.127.net/77aca51443b0e5e93c73621ffb70aae3.png",
+        "https://yanxuan.nosdn.127.net/894b48e0a0dc9ed949da5a995e4114ad.png"
+
+      ]
+    setTimeout(()=>{
+      this.banners = arr;
+    },300)
     console.log(this.val);
   },
   methods: {
@@ -75,13 +84,21 @@ export default {
   data() {
     return {
       banners: [
-        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
-        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
-        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png",
-        "https://yanxuan.nosdn.127.net/75ce66f46c287cc512749f9e8328f0b3.png"
       ]
     };
   },
+   watch: {
+      banners(newVal,oldVal) {
+        if(newVal!==oldVal){
+          this.$nextTick(()=>{
+            this.swipt = new Swiper(this.$refs.banner,{
+             autoplay: true,
+          })
+        
+        })
+      }
+      }
+    },
   mounted() {
     new Swiper(this.$refs.banner, {
       autoplay: true,
@@ -92,13 +109,6 @@ export default {
       }
     });
   }
-  //   watch: {
-  //     banners(newval) {
-  //       this.$nextTick(() => {
-
-  //       });
-  //     }
-  //   },
 };
 </script>
 
@@ -166,13 +176,13 @@ export default {
   line-height: 0.6rem;
   color: #7f7f7f;
   margin-bottom: 0.4rem;
-  border-bottom: 0.3rem solid #ccc;
+  border-bottom: 1px solid #ccc;
   text-indent: 0.2rem;
 }
 .shoppingReward {
   height: 0.8rem;
   margin-bottom: 0.2rem;
-  border-bottom: 0.3rem solid #ccc;
+  border-bottom: 1px solid #ccc;
   text-indent: 0.2rem;
 }
 .lable {
@@ -183,7 +193,7 @@ export default {
 }
 .points {
   font-size: 0.3rem;
-  color: red;
+  color: B4282D;
 }
 .listItem {
   height: 0.8rem;
@@ -269,7 +279,7 @@ export default {
 .footer-right {
   width: 2rem;
   height: 100%;
-  background: red;
+  background: #B4282D;
   border: 0;
   font-family: PingFangSC-Light, helvetica, "Heiti SC";
 }

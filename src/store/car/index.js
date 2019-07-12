@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import Json from 'api/json/home.js'
  const state ={
     goodsList:[],
     selecetedAll:true,
@@ -7,21 +8,22 @@ import axios from "axios";
  const actions ={
     getActionGoods({commit}){
         var good = [];
-            axios({
-                method:"get",
-                url:"http://localhost:3000/popularItemList"
-            }).then((data)=>{
+            // axios({
+            //     method:"get",
+            //     url:"http://localhost:3000/popularItemList"
+            // }).then((data)=>{
+                var data = Json.popularItemList;
                 // 这里要从本地存储中读取数据
                 var idarr = JSON.parse(localStorage.getItem('idArr'));
                 for(var j =0;j<idarr.length;j++){
-                    for(var i =0;i<data.data.length;i++){
-                        if(idarr[j] == data.data[i].id){
-                            good.push(data.data[i]);
+                    for(var i =0;i<data.length;i++){
+                        if(idarr[j] == data[i].id){
+                            good.push(data[i]);
                         }
                     }
                 }
                 commit("getMutationGoods",good)
-            })
+            // })
         
         
     }
