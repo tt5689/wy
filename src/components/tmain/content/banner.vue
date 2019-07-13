@@ -18,7 +18,6 @@ export default {
     //   url: "http://localhost:3000/focusList"
     // });
     let dat = Json.focusList;
-    console.log(dat);
     for (var i = 0; i < dat.length; i++) {
       this.banners.push(dat[i].picUrl);
     }

@@ -27,7 +27,7 @@ export default {
      }),
      ...mapGetters({
        count:"car/goodsInfor"
-     })
+     }),
   },
   methods: {
     ...mapMutations({

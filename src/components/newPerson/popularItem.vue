@@ -11,7 +11,8 @@
 </div>
 </template>
 <script>
-import {popuItem} from 'api/newPerson'
+// import {popuItem} from 'api/newPerson'
+import Json from 'api/json/home.js'
 export default {
     data() {
         return {
@@ -19,8 +20,9 @@ export default {
         }
     },
     async created() {
-        let dat = await popuItem();
-        this.popList = dat.data;
+        // let dat = await popuItem();
+        let dat = Json.popularItems;
+        this.popList = dat;
     },
 };
 </script>

@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports={
+    publicPath:"WYYX",
     devServer:{
         open:true,
         proxy:{ //跨域配置项
@@ -21,7 +22,8 @@ module.exports={
                 "store":path.resolve(__dirname,"./src/store"),
                 "utils":path.resolve(__dirname,"./src/utils"),
                 "views":path.resolve(__dirname,"./src/views"),
-                "api":path.resolve(__dirname,"./src/api")
+                "api":path.resolve(__dirname,"./src/api"),
+                "assets":path.resolve(__dirname,"./src/assets")
             }
             
         }

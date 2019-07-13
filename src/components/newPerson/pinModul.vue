@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import {pinList} from 'api/newPerson'
+// import {pinList} from 'api/newPerson'
+import Json from 'api/json/home.js'
 export default {
     data(){
         return {
@@ -31,8 +32,9 @@ export default {
         }
     },
     async created() {
-        var dd = await pinList();
-        this.pinList = dd.data;
+        // var dd = await pinList();
+        var dd = Json.pinModuleList;
+        this.pinList = dd;
     },
 }
 </script>

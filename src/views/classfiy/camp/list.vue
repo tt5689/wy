@@ -27,6 +27,8 @@ import Json from 'api/json/home.js'
     }
 
  </script>
+
+ 
  <style scoped>
     ul{
         float: left;

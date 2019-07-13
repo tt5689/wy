@@ -1,6 +1,7 @@
 <template>
     <div class="centeen_wrap">
         <CenTHeader/>
+        <keep-alive>
         <div class="canmain">
             <CanBann />
             <Welfare />
@@ -10,8 +11,8 @@
             <ComposeWrap v-for="(itm) in valueList" :key="itm.id" :vBList="itm"/>
             <Amazing/>
         </div>
+        </keep-alive>
     </div>
-    
 </template>
 <script>
 import CenTHeader from './canheader.vue';

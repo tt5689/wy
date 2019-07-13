@@ -59,7 +59,6 @@ export default {
         FooterSelect
     },
       async created() {
-          console.log(Json);
         // let dt = await categoryModule();
         // this.axdata = dt.data;
         this.axdata = Json.categoryModule;

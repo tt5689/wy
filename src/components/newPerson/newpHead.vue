@@ -8,7 +8,7 @@
                     <span class="rule">活动规则 >></span>
                 </div>
                 <img src="https://yanxuan.nosdn.127.net/eb5b9647cdcc4a8b29f686b72e046a9e.png" />
-                <div class="loginBtn">立即领取</div>
+                <router-link to="/mine"  class="loginBtn">立即领取</router-link>
             </div>
         </div>
 </div>
@@ -73,5 +73,6 @@ export default {
     color: #fff;
     line-height: .7rem;
     text-align: center;
+    display: block;
 }
 </style>

@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import {appsaleItem} from 'api/newPerson'
+// import {appsaleItem} from 'api/newPerson'
+import Json from 'api/json/home.js'
 export default {
     data() {
         return {
@@ -39,8 +40,9 @@ export default {
         }
     },
     async created() {
-        var da = await appsaleItem();
-        this.appSaleList = da.data;
+        // var da = await appsaleItem();
+        var da = Json.appSaleItems;
+        this.appSaleList = da;
     },
 }
 </script>

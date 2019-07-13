@@ -25,7 +25,8 @@
 </template>
 
 <script>
-import {exclusiveList} from 'api/newPerson'
+// import {exclusiveList} from 'api/newPerson'
+import Json from 'api/json/home.js'
 export default {
      data() {
         return {
@@ -33,8 +34,9 @@ export default {
         }
     },
      async created(){
-        let da = await exclusiveList();
-        this.exclusiveMList = da.data;
+        // let da = await exclusiveList();
+        let da= Json.newUserExclusiveModule;
+        this.exclusiveMList = da;
     },
 }
 </script>

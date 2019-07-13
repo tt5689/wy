@@ -1,60 +1,42 @@
 <template>
  <div class="main">
-    <div class="box-x">
+    <div class="box-x" v-for="(item,index) in hotKeywordLi" :key= "index">
         <div class="u-name">
             <span class="ava">
-                <img src="https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png?imageView&quality=65&thumbnail=56y56" alt="">
-            </span>
-            <span class="avb">选姐</span>
-        </div>
-        <div class="titen">常年断货的严选爆品终于上架了，回头客都在抢！</div>
-        <div class="pic">
-            <img src="https://yanxuan.nosdn.127.net/6f5e7bb94350b7eed05134a9b1d83200.jpg?imageView&quality=65&thumbnail=690y376" alt="">
-        </div>
-        <div class="rcound">
-            <i class="ico"></i>
-            <span>53W看过</span>
-        </div>
-    </div>
-    <div class="box-x">
-        <div class="u-name">
-            <span class="ava">
-                <img src="https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png?imageView&quality=65&thumbnail=56y56" alt="">
+               <img :src="item.minimg" >
             </span>
             <span class="avb">选妹</span>
         </div>
-        <div class="titen">常年断货的严选爆品终于上架了，回头客都在抢！</div>
+        <div class="titen">{{item.titem}}</div>
         <div class="pic">
-            <img src="https://yanxuan.nosdn.127.net/6f5e7bb94350b7eed05134a9b1d83200.jpg?imageView&quality=65&thumbnail=690y376" alt="">
+          <img :src="item.maximg" alt="">
         </div>
         <div class="rcound">
             <i class="ico"></i>
-            <span>53W看过</span>
+            <span>{{item.watch}}</span>
         </div>
     </div>
-    <div class="box-x">
-        <div class="u-name">
-            <span class="ava">
-                <img src="https://yanxuan.nosdn.127.net/d9d036fac85df6b30cf8c184e030323c.png?imageView&quality=65&thumbnail=56y56" alt="">
-            </span>
-            <span class="avb">选妹</span>
-        </div>
-        <div class="titen">常年断货的严选爆品终于上架了，回头客都在抢！</div>
-        <div class="pic">
-            <img src="https://yanxuan.nosdn.127.net/6f5e7bb94350b7eed05134a9b1d83200.jpg?imageView&quality=65&thumbnail=690y376" alt="">
-        </div>
-        <div class="rcound">
-            <i class="ico"></i>
-            <span>53W看过</span>
-        </div>
-    </div>
-</div>
+   
     
+</div>
 </template>
 <script>
+// import {recommend} from "api/home/thome.js"
+import Json from 'api/json/home.js'
 export default {
-    name:"recbody",
-    
+      async created() {
+        // let data = await recommend();
+        let data = Json.recommend;
+        console.log(data);
+         this.hotKeywordLi = data;
+    },
+     data(){
+        return{
+            hotKeywordLi:[]
+
+        }
+
+    }
 }
 </script>
 <style>

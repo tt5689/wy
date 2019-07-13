@@ -3,7 +3,7 @@
     <span>购物车</span>
     <div class="right">
       <router-link to="/newPerson" tag="p" class="ticket" v-if="fla">领券</router-link>
-      <p @click="handlerEdit" v-text="fla?'编辑':'完成'"></p>
+      <p @click="handlerEdit" v-text="fla?'编辑':'完成'" ></p>
     </div>
   </div>
 </template>
@@ -13,14 +13,16 @@ export default {
  
   computed: {
     ...mapState({
-      fla:state=>state.car.deleSle
+      fla:state=>state.car.deleSle,
+      dataList:state=>state.car.goodsList,
+      showflag:true
     })
   },
   methods: {
     ...mapMutations({
        handlerEdit:"car/handlerEdit"
     })
-  },
+  }
 };
 </script>
 <style>

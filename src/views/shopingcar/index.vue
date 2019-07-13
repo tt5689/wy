@@ -33,6 +33,7 @@ export default {
 .shopCar{
     padding-bottom: 1.98rem;
     height: 100%;
+    box-sizing: border-box;
 }
 </style>
 

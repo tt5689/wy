@@ -41,7 +41,8 @@
 </template>
 
 <script>
-import {startPop} from 'api/newPerson'
+// import {startPop} from 'api/newPerson'
+import Json from 'api/json/home.js'
 export default {
     data() {
         return {
@@ -49,8 +50,9 @@ export default {
         }
     },
     async created() {
-        let da = await startPop();
-        this.starP = da.data;
+        // let da = await startPop();
+        let da =Json.starReputationModule;
+        this.starP = da;
     },
 }
 </script>

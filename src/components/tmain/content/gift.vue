@@ -34,10 +34,10 @@ import Json from 'api/json/home.js'
 export default {
     methods: {
         handlerClick(){
-             this.$router.replace('/canteen');
+             this.$router.push('/canteen');
         },
         handlernewPClick(){
-            this.$router.replace('/newPerson');
+            this.$router.push('/newPerson');
         }
     },
     async created() {

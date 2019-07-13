@@ -1,10 +1,13 @@
 <template>
+<div>
+<Loading v-if="flag"></Loading>
   <div class="swiper-container" ref="ttbanner">
     <div class="canbanner swiper-wrapper">
       <a href="javascript" class="swiper-slide" v-for="(item,index) in bannerList" :key="index">
         <img :src="item.picUrl" />
       </a>
     </div>
+  </div>
   </div>
 </template>
 
@@ -16,15 +19,16 @@ import Swiper from "swiper";
 export default {
   async created() {
     let data = await getcanteen();
+    if(data){
+      this.flag = false;
+    }
     data = data.data;
-    // this.bannerList = data.saleBanner;
-    setTimeout(() => {
     this.bannerList = data.saleBanner;
-  }, 500);
   },
   data() {
     return {
       bannerList: [],
+      flag:true
     }
   },
   watch: {

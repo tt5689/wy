@@ -15,7 +15,8 @@ import Json from 'api/json/home.js'
                 var data = Json.popularItemList;
                 // 这里要从本地存储中读取数据
                 var idarr = JSON.parse(localStorage.getItem('idArr'));
-                for(var j =0;j<idarr.length;j++){
+                if(idarr){
+                    for(var j =0;j<idarr.length;j++){
                     for(var i =0;i<data.length;i++){
                         if(idarr[j] == data[i].id){
                             good.push(data[i]);
@@ -23,6 +24,8 @@ import Json from 'api/json/home.js'
                     }
                 }
                 commit("getMutationGoods",good)
+                }
+                
             // })
         
         
@@ -69,12 +72,15 @@ function handerChangeLOcalsto(index,num,fla,id){
         }
         localStorage.setItem('goodList',JSON.stringify(params));
         state.goodsList = params;
-       
+       state.selecetedAll = true;
+       state.deleSle = true;
     },
+    //商品列表点击选中或者取消事件
     handerChangeToggle(state,params){
         state.goodsList[params].flag = !state.goodsList[params].flag;
         var temp = true;
         state.goodsList.forEach(element => {
+            //判断是有没有选中的
             if(!element.flag){
                 temp = false;
             }
@@ -99,6 +105,7 @@ function handerChangeLOcalsto(index,num,fla,id){
         state.goodsList[index].num ++;
         handerChangeLOcalsto(index,state.goodsList[index].num);
     },
+    //键盘输入商品执行的事件
     handlerInput(state,es){
         state.goodsList[es.index].num = es.e.target.value;
     },
@@ -113,14 +120,18 @@ function handerChangeLOcalsto(index,num,fla,id){
     },
     // 点击删除出现的东西
     handerDelete(state){
+        //当按钮从下单变为删除的时候执行的事件
         if(!state.deleSle){
+            console.log('ddddd');
             state.goodsList.forEach((item,index)=>{
                 if(item.flag){
                     state.goodsList.splice(index,1)
                     handerChangeLOcalsto(index,0,true,item.id);
                 }
             })
-            //还需要删除缓存里面的数据
+        }
+        if(state.goodsList.length == 0){
+            state.deleSle = true;
         }
         
     }

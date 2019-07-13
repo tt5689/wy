@@ -1,6 +1,9 @@
 <template>
 <BScroll ref="bscroll">
     <template>
+     <p v-if="dataList.length == 0" class="tipclas">
+         <img src="../../assets/timg.gif" alt="">啥也木有
+     </p>
     <ul class="cartGroupList">
             <li class="gItem" v-for="(item,index) in dataList" :key="index" @change="handerChangeToggle(index)">
                 <input type="checkbox" :checked="item.flag"/>
@@ -26,7 +29,8 @@ import {mapState,mapMutations} from 'vuex'
 export default {
     computed: {
         ...mapState({
-            dataList:state=>state.car.goodsList
+            dataList:state=>state.car.goodsList,
+            tip:state=>state.car.flagTip
         })
     },
     methods: {
@@ -36,12 +40,22 @@ export default {
             handlerAdd:"car/handlerAdd",
             handlerInput:"car/handlerInput"
         })
-    },
+    }
 }
 </script>
 
 
-<style>
+<style lang="scss">
+.tipclas{
+    width: 100%;
+    text-align: center;
+    font-size: .5rem;
+    img{
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+}
 .cartGroupList{
     min-height: 18rem;
 }
